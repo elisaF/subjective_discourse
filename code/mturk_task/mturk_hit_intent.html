@@ -1,0 +1,1332 @@
+<!DOCTYPE html>
+<body>
+<script src="https://assets.crowd.aws/crowd-html-elements.js"></script>
+<crowd-form>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<style type="text/css">
+du {
+    text-decoration-line: underline;
+    text-decoration-style: double;
+}
+.tooltip-inner {
+  max-width: 650px;
+  text-align: left;
+}
+table {
+  border: 0px solid black;
+  border-spacing:0;
+  border-collapse: collapse; 
+}
+th, td {
+  border: 0px solid black;
+}
+.lborder{
+  padding-left: 15px;
+  border-left: 5px solid white;
+}
+.lbordernowrap{
+  white-space: nowrap;
+  padding-left: 15px;
+  border-left: 5px solid white;
+}
+.lbordertopspace{
+  padding-top: 5px;
+  padding-left: 15px;
+  border-left: 5px solid white;
+}
+.lborderindentown{
+  background-color: #f0f5f5;
+  white-space: nowrap;
+  vertical-align: top;
+  padding-left: 25px;
+  border-left: 5px solid white;
+}
+.lborderindentownwrap{
+  background-color: #f0f5f5;
+  vertical-align: top;
+  padding-left: 25px;
+  border-left: 5px solid white;
+}
+.lborderdoubleindent{
+  background-color: #f0f5f5;
+  vertical-align: top;
+  padding-left: 35px;
+  border-left: 5px solid white;
+}
+.lthinborder{
+  background-color: #fff8ea;
+  white-space: nowrap;
+  padding-left: 15px;
+}
+.lthinborderindent{
+  background-color: #fff8ea;
+  white-space: nowrap;
+  padding-left: 20px;
+}
+.lthinborderindentwrap{
+  background-color: #fff8ea;
+  padding-left: 20px;
+}
+.lthinborderdoubleindent{
+  background-color: #fff8ea;
+  vertical-align: top;
+  padding-left: 35px;
+}
+.exampleText
+{
+    color: #cc5500;
+}
+spansq {
+	font-style: italic;
+	letter-spacing: -0.01em;
+}
+spansqueeze {
+	font-style: italic;
+	letter-spacing: -0.01em;
+	color: #D3D3D3;
+}
+</style>
+<section class="container" id="Other" style="margin-bottom:15px; padding: 10px 10px; height: 100%; width: 100%; margin: 0; font-family: Amazon Ember,Helvetica Neue,Roboto,Arial,sans-serif; font-size:1.2em;">
+<div class="row col-xs-12 col-md-12">
+	<div class="panel panel-primary">
+	<div class="panel-heading"><strong>What is the <em>true</em> intent?</strong></div>
+
+	<div class="panel-body">
+<!--	<h><strong>Payment:</strong></h>-->
+<!--		<p>if you <em><strong>read and adhere to the instructions carefully</em></strong>, you will receive a BONUS to double your task reward ($0.60 for task + $0.60 for bonus).</p>-->
+	<h><strong>Goal of study:</strong></h>
+	<p>In this study, we are analyzing the questioning of witnesses in U.S. congressional hearings. We are interested in understanding <strong><em>how audiences (you) perceive intent in argumentative conversations</em></strong>, and <strong><em>how that perception changes</em></strong> depending on the personal beliefs of different audiences.</p>
+	<h><strong>About Congressional hearings:</strong></h>
+	<p>A Congressional hearing is called by Congress and serves as a forum to get facts and opinions from a witness. A witness is usually a politician, an academic, or a private corporate official. Hearings are held <em>to investigate suspicions of wrongdoing</em> or <em>to review the quality of federal programs and performance of government officials</em>. </p>
+	<h><strong>Your task:</strong></h>
+	<p>You are presented with <strong><em>question-response</em></strong> pairs from a congressional hearing.</p>
+	For each <strong><em>question</em></strong>, your task is to judge the <strong><em>true intent of the questioner</em></strong></li>
+	 	<ul>
+	 		<li>Is the politican attacking or favoring the witness?</li>
+	 	</ul>
+	For each <strong><em>response</em></strong>, your task is to judge the <strong><em>true intent of the witness</em></strong></li>
+		<ul>
+	 		<li>Is the witness answering or evading the question?</li>
+	 	</ul>
+</div>
+</div>
+
+<section>
+<div style="display: box" class="panel panel-warning">
+<div class="panel-heading"><strong>Your Task: Detailed Instructions and Examples</strong> <a href="javascript:void(0);" onclick="toggle('instructions');">(Click to hide/show)</a></div>
+
+<div id="instructions" class="panel-body">
+<p>In this task, you are presented with a series of question-response pairs from a U.S. congressional hearing (in chronological order).</p>
+<p>The questions are asked by a <strong><em>politician</em></strong>, a member of Congress. The responses to the questions are given by a <strong><em>witness</em></strong>.</p>
+<p>People usually speak one at a time, and take <strong><em>turns</em></strong> speaking. Each turn in the conversation starts with the name of the speaker and their title.</p>
+
+<ol>
+<li><h><strong>Questioner Intent: How does the politician pose their question(s)?</strong></h></li>
+	<ul>
+		<li><strong>includes leading questions, controversial assumptions, or attacks:</strong>
+				<ul>
+				<li><span class="exampleText">Chairman Hensarling: <em><u>Isn't it true</u></em>, Mr. Stumpf, that in the settlement, no one admits guilt?</span> (you believe the politician is leading the witness to an unfavorable 'yes' answer)</li>
+				<li><span class="exampleText">Mr. Wilson: What changes need to be made to have <em><u>greater success</u></em> in countering Hezbollah?</span> (you believe the politician makes the controversial assumption that little or no success has been made in fighting Hezbollah)</li>
+				<li><a href="javascript:void(0);" onclick="toggle('examplesLoaded');">More examples:</a></li>
+				<div id="examplesLoaded" style="display: none">
+					<li><span class="exampleText">Mr. Deutch: Do you think it would be reasonable for the members of this committee to conclude that the President <em><u>by first interfering in one investigation and then interfering in an investigation into himself</u></em> committed obstruction of justice?</span> (you believe the politician includes the controversial assumption that Trump interfered in investigations)</li>
+				</div>
+				</ul>
+		</li>
+		<li><strong>includes questions or statements favoring the witness:</strong>
+				<ul>
+				<li><span class="exampleText">Mr. Guthrie (to Mark Zuckerberg, CEO of Facebook): I had a lot of people complain about ads but it is something I am willing to accept in return for a <em><u>free and valuable service</u></em>. So <em><u>you are not unique in Silicon Valley in doing this type of targeted ads, are you?</u></em></span> (you believe the politician is favoring Zuckerberg and asking him an easy question that makes Facebook look good)</li>
+				</ul>
+		</li>
+	</ul>
+
+<li><h><strong>Witness Intent</strong></h></li>
+<p>Use <strong><em>your personal beliefs and experiences</em></strong> to make this judgment. Multiple choices may fit, but choose the one that fits best.</p>
+	<ol>
+		<li><strong>How does the witness respond to the question(s)?</strong></li>
+			<ul>
+				<li type="circle"><strong>answers all reasonable questions</strong>
+					<ul>
+						<li><a href="javascript:void(0);" onclick="toggle('descAll');">Description:</a></li>
+							<div id="descAll" style="display: none">
+								You believe the witness <strong><em>answers</strong></em> all reasonable questions in a straightforward manner. In the case of being asked multiple questions, you can decide whether it is reasonable to expect the witness to answer all or only some of the questions.
+								<ul>
+									<li>Q:  Mr. Cohen, who said that?</br>
+									<span class="exampleText">Mr. Cohen: <em>I did.</em></span> (you believe Cohen directly answers the question)</li>
+									<li>Q: One of many, but not the sole factor?</br>
+									<span class="exampleText">Mr. Powell: <em>No. It is simply one of many.</em></span> (you believe Powell directly answers the question)</li>
+									<li>Q: Can you elaborate on that?</br>
+									<span class="exampleText">Mr. Powell: <em>So, before the financial crisis...</em></span> (you believe Powell indirectly answers the question)</li>
+								</ul>
+							</div>
+					</ul>
+				</li>
+				<li type="circle"><strong>answers partially or not all questions</strong>
+					<ul>
+						<li><a href="javascript:void(0);" onclick="toggle('descPart');">Description:</a></li>
+							<div id="descPart" style="display: none">
+								You believe the witness provides a <strong><em>partial</em></strong> answer because you believe they either gave an <strong><em>incomplete</em></strong> answer or answered <strong><em>only some</em></strong> of the questions being asked.<br> 
+								You may also assume the politician asks an <strong><em>implied</em></strong> question; that is, a question not explicitly asked but obvious from the context. For example, the question "Can you elaborate on that?" naturally implies the question "What other information do you have on that?". Responding with only "Yes" answers the literal question but doesn't answer the implied question.
+							</div>
+						<li><a href="javascript:void(0);" onclick="toggle('intentsPart');">Possible Intents:</a></li>
+							<div id="intentsPart" style="display: none">
+								You believe the witness has one of these intents:
+								<ul>
+									<li type="circle"><strong>to dodge an unfavorable question or question part</strong></li>
+										<ul>
+											<li>Q: Do you, Mr. Cohen, recognize the gravity of your offenses? You are a lawyer, right?</br>
+												<span class="exampleText">Mr. Cohen: <em>As of yesterday, I am no longer a lawyer. I have lost my law license, amongst other things.</em></span> (you believe Cohen doesn't answer the first question of <u>whether he recognizes the gravity of his offenses</u>)</li>
+											<li>Q: Would Don Jr. or Mr. Weisselberg have more information about that?</br>
+												<span class="exampleText">Mr. Cohen: <em>Mr. Weisselberg for sure about the entire discussions, and Don Jr. would have cursory information.</em></span> (you believe Cohen doesn't answer the implied question <u>"<em>What</em> is the other information?"</u>, and instead only answers the literal question of whether or not they have information.)</li>
+										</ul>
+									<li type="circle"><strong>for other justified reason</strong></li>
+										<ul>
+											<li>Q: What are you looking for in the labor market? How much slack do we have left?</br>
+												<span class="exampleText">Mr. Powell: <em>We look at a very broad range of indicators [...] And you also asked--?</em></span> (you believe Powell genuinely forgot the second question)
+											</li>
+											<li>Q: Do you, Mr. Cohen, recognize the gravity of your offenses? You are a lawyer, right?</br>
+												<span class="exampleText">Mr. Cohen: <em>As of yesterday, I am no longer a lawyer. I have lost my law license, amongst other things.</em></span> (you believe the first question is rhetorical so Cohen doesn't need to answer it)</li>
+										</ul>
+								</ul>
+							</div>
+					</ul>
+				</li>
+				<li type="circle"><strong>answers a different question</strong>
+					<ul>
+						<li><a href="javascript:void(0);" onclick="toggle('descDiff');">Description:</a></li>
+							<div id="descDiff" style="display: none">
+								You believe the witness <strong><em>doesn't answer the <u>original question</u></em></strong> but instead <em>shifts the question</em> so they can <strong><em> answer a <u>different question</u></em></strong>.
+							</div>
+						<li><a href="javascript:void(0);" onclick="toggle('intentsDiff');">Possible Intents:</a></li>
+							<div id="intentsDiff" style="display: none">
+								You believe the witness has one of these intents:
+							<ul>
+								<li type="circle"><strong>to reformulate or evade an unfavorable question</strong></li>
+									<ul>
+										<li>Q: But if you saw the problem in one area of the business, why didn't you thoroughly investigate in the other areas?</br>
+											<span class="exampleText">Mr. Stumpf: <em>There is no question, Mr. Chairman, we should have done more sooner.</em></span> (you believe Stumpf doesn't answer the tough question <u>why he didn't investigate</u>; he instead shifts the question to: Why didn't you respond better and sooner?)</li>
+										<li>Q: I understand that Facebook does not sell user data, per se, in the traditional sense. Why wasn't explaining what Facebook does with users' data higher priority for you as a cofounder and now as CEO?</br>
+											<span class="exampleText">Mr. Zuckerberg: <em>Mr. Chairman, you are right that we don't sell any data, and I would say that we do try to explain what we do as time goes on. It is a broad system.</em></span> (you believe Zuckerberg doesn't answer the question of <u>why explaining wasn't a higher priority</u>; he instead shifts the question to: Do you sell user data? Do you explain this?)</li>
+									</ul>
+								<li type="circle"><strong>to correct the questioner or other justified reason</strong></li>
+									<ul>
+										<li>Q: When her hard drive failed, if you were properly backing up all the information required under the Federal Records Act, you would've had all those emails in your backup, wouldn't you?
+										</br>
+											<span class="exampleText">Mr. Koskinen: <em>All emails are not official records under any official records act. Only emails are saved that reflect agency actions.</em></span> (you believe Koskinen doesn't answer the question <u>"would you have the emails?"</u> because he instead corrects the politician's assumption about what actually gets backed up.)</li>
+									</ul>
+							</ul>
+							</div>
+					</ul>
+				</li>
+				<li type="circle"><strong>says they don't understand/don't know/can't answer or asks a clarification question</strong>
+					<ul>
+						<li><a href="javascript:void(0);" onclick="toggle('descCant');">Description:</a></li>
+							<div id="descCant" style="display: none">
+								The witness <strong><em>doesn't answer any form of the question</em></strong> (original or shifted) and instead says they either don't understand the question (including asking clarification questions), don't know the answer or can't answer the question.
+							</div>
+						<li><a href="javascript:void(0);" onclick="toggle('intentsCant');">Possible Intents:</a></li>
+							<div id="intentsCant" style="display: none">
+								You believe the witness has one of these intents:
+								<ul>
+									<li type="circle"><strong>you believe they are lying</strong> (avoiding any answer, stalling, buying time)
+										<ul>
+											<li>Mr. Engel: Do you adjust your algorithms to prevent individuals interested in violence from being connected with other like-minded individuals?</br>
+												<span class="exampleText">Mr. Zuckerberg: <em>Sorry. Could you repeat that?</em></span> (you believe Zuckerberg understood/heard the question, but stalls for time)</li>
+											<li>Mr. Meadows: Have you contacted anybody in the administration to advocate on your behalf?</br>
+												<span class="exampleText">Mr. Cohen: <em>I don't know what you are referring to, sir.</em></span> (you believe Cohen knows, but stalls for time)</li>
+										</ul>
+									</li>
+									<li type="circle"><strong>you believe they are sincere</strong> (they genuinely didn't understand or are not able to answer the question)
+										<ul>
+											<li>Q: Yes or no, will you make the commitment to change the user default settings?</br>
+												<span class="exampleText">Mr. Zuckerbeg: <em>Congressman, this is a complex issue that deserves more than a one-word answer.</em></span> (you believe Zuckerberg can't answer because you agree that the response is not a simple yes/no answer) </li>
+											<li>Ms. Jackson Lee: Do you wish to change your testimony on June 13, where you said, ''I have never met with any Russians''?</br>
+												<span class="exampleText">Attorney General Sessions: <em>You're referring to my testimony at confirmation?</em></span> (you believe Sessions is sincerely asking for clarification)</li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+					</ul>
+				</li>
+			</ul>
+		<li><strong>Does the witness provide extra information?</strong>
+			<ul>
+				<li><a href="javascript:void(0);" onclick="toggle('descOver');">Description:</a></li>
+							<div id="descOver" style="display: none">
+							You believe the witness also provides extra information</strong></em> not asked for or expected by the politician. </br>
+							</div>
+						<li><a href="javascript:void(0);" onclick="toggle('intentsOver');">Possible Intents:</a></li>
+							<div id="intentsOver" style="display: none">
+								You believe the witness has one of these intents:
+								<ul>
+									<li type="circle"><strong>to sway opinion in their favor</strong> (for example, by painting the witness in a positive light, giving the witness the benefit of the doubt or a way out)</li>
+										<ul>
+											<li>Q: Is Facebook today the same kind of company you started with a Harvard.edu email address?</br>
+												<span class="exampleText">Mr. Zuckerberg: Well, Mr. Chairman, I think we have evolved quite a bit as a company. When I started it, I certainly didn't think that <em><u>we would be the ones building this broad of a community around the world. I thought someone would do it. I didn't think it was going to be us.</u></em></span> (you believe Zuckerberg answers the question, but also includes other information to make himself look humble while having achieved something great)</li>
+										</ul>
+									<li type="circle"><strong>to be helpful or add critical details</strong> (for example, by including missing or useful information to better understand the answer)</li>
+										<ul>
+											<li>Q: Does that increased credit risk in the loan market pose systemic vulnerabilities?</br>
+												<span class="exampleText">Mr. Powell: We don't believe it poses systemic kinds of risks, but we do think it poses a macroeconomic risk, particularly in the event of an economic downturn. These are companies that have borrowed in good times and borrowed high amounts of debt. And if there is a downturn, they will be less able to carry out their roles in the economy and that may have an amplification effect on a downturn.</span> (you believe Powell adds helpful and critical details to understand his nuanced answer)</li>
+										</ul>
+								</ul>
+							</div>
+			</ul>
+		</li>
+	</ol>
+<li><h><strong>Explanation of Witness Intent</strong></h></li>
+<p>Explain your choice for how the witness responded to the question and what you perceived to be the intent of the witness (that is, explain all your radio button selections for Witness Intent).</p>
+
+<p>Because your choices are subjective, they will naturally often differ from another person's. Here is an example of choices and explanations given by two different people who have differing views on the witness. </p>
+
+<table class="table table-small" border="1">
+	<tbody> 
+		<thead>
+			<tr>
+				<td style="border-top: 0px solid #d5d5d5;"></td>
+				<th >Annotator 1 View</th>
+				<th>Annotator 2 View</th>
+			</tr>
+		</thead>
+		<tr>
+			<td style="border-top: 0px solid #d5d5d5;"></td>
+			<td valign="top" bgcolor="#ffeaeb">I deleted my Facebook account.</br>
+				Zuckerberg doesn't care about privacy.</td>
+			<td bgcolor="#eafaea">
+				I visit Facebook every day.</br>
+				Facebook is an excellent way to socialize.</td>
+		</tr>
+		<thead>
+			<tr style="border-top: 0.5px solid #d5d5d5;">
+				<th rowspan="2">Question-Response Pair</th>
+				<th colspan="2" style="text-align:center;border-bottom: 0px"><em>How does the witness respond to the question(s)?</em></th>
+			</tr>
+
+			<tr>
+				<th style="border-top: 0px">Annotator 1</th>
+				<th style="border-top: 0px">Annotator 2</th>
+			</tr>
+		</thead>
+		<tr style="border-top: 0.5px solid #d5d5d5;">
+			<td>Mr Engel: So do you adjust your algorithms to prevent individuals interested in violence from being connected with like-minded individuals?</br>
+				<span class="exampleText">Mr. Zuckerberg: Sorry. Could you repeat that?</span>
+
+			</td>
+			<td bgcolor="#ffeaeb" style="width:33%">
+				<ul style="padding-left:15px">
+					<li>
+						<spansq>says they don't understand/know/can't answer or asks clarification question</spansq>
+						<ul>
+							<li><spansq><strong><em>you believe they're lying</em></strong></spansq></p></li>
+						</ul>
+					</li>
+				</ul>
+				<strong>Explanation:</strong><em>Zuckerberg pretends he didn't hear the question, but he is just buying time to craft a good answer.
+			</td>
+			<td bgcolor="#eafaea" style="width:32%">
+				<ul style="padding-left:15px">
+					<li><spansq>says they don't understand/ don't know/can't answer or asks clarification question</spansq>
+						<ul>
+							<li><spansq><strong><em>you believe they're sincere</em></strong></spansq></li>
+						</ul>
+					</li>
+				</ul>
+				<strong>Explanation:</strong><em>Zuckerberg didn't understand the question so he asks them to repeat it.</em>
+			</td>
+ 		</tr>
+ 		<tr  style="border-top: 0.5px solid #d5d5d5;">
+ 			<td valign="top">
+ 				Mr. Engel: Do you adjust your algorithms to prevent individuals interested in violence from being connected with other like-minded individuals?</br>
+ 				<span class="exampleText">Mr. Zuckerberg: Congressman, yes. That is certainly an important thing that we need to do.</span>
+ 			</td>
+ 			<td bgcolor="#ffeaeb">
+ 				<ul  style="padding-left:15px">
+ 					<li><spansq><strong>answers a different question</strong></spansq>
+ 						<ul>
+ 							<li><spansq><strong><em>to reformulate or evade an unfavorable question</spansq></strong></em></li>
+ 						</ul>
+ 					</li>
+ 				</ul>
+				<strong>Explanation:</strong><em>Zuckerberg shifts the question to "Will you in the future..." vs. "Do you now..." to avoid saying they don't currently do that.</em>
+			</td>
+			<td bgcolor="#eafaea" valign="top">
+				<ul  style="padding-left:15px">
+					<li><spansq><strong>answers all reasonable questions</strong></spansq></li>
+				</ul>
+				<strong>Explanation:</strong><em>Zuckerberg directly answers 'yes' they currently do and recognizes its importance.</em>
+			</td>
+ 		</tr>
+ 		<tr  style="border-top: 0.5px solid #d5d5d5;">
+ 			<td>
+ 				Mr. Barton: Children can get a Facebook account of their own starting at age 13. Is that correct?</br>
+ 				<span class="exampleText">Mr. Zuckerberg: Congressman, that is correct.</span>
+ 			</td>
+ 			<td bgcolor="#ffeaeb" valign="top">
+ 				<ul  style="padding-left:15px">
+ 					<li><spansq>answers all reasonable questions</spansq></li>
+ 				</ul>
+				<strong>Explanation:</strong><em>Zuckerberg gives an unambiguous affirmative answer that I believe can't be interpreted any other way.</em>
+ 			</td>
+ 			<td bgcolor="#eafaea">
+ 				<ul  style="padding-left:15px">
+ 					<li><spansq>answers all reasonable questions</spansq></li>
+ 				</ul>
+				<strong>Explanation:</strong><em>Zuckerberg indirectly answers 'yes'.</em>
+ 			</td>
+ 		</tr>
+	</tbody>
+</table>
+</li>
+</ol>
+
+</div>
+</div>
+<div class="panel panel-success">
+<div class="panel-heading"><strong>Congressional hearing: ${hearing_title}</strong> (held on ${hearing_date})</br><strong>Summary:</strong> ${hearing_summary}</div>
+<div class="panel-body">
+	<p>Annotate the following question-response pairs from the congressional hearing described above.</p>
+	<p><strong>Tips:</strong></p>
+	<ul>
+	<li>Click on the <strong><em>speaker</em></strong> name to get more information (politician vs. witness, and title).</li>
+	<li>Click on the <strong><em>previous and next links</em></strong> at the top and bottom of each question-response to see the immediately preceding fand following discussion (links will not appear if there is no intervening discussion).
+	<li><strong><em>Hover your mouse</em></strong> over the radio button choices for examples.</li>
+	</ul>
+	
+	<div class="panel panel-success">
+	<div class="panel-heading"><strong>Question-Response 1 of 5</strong></div>
+
+	<div class="panel-body">
+	<table style="font-size: 1.0em;">
+		<tbody>
+			<tr id="showPrev1" style="display: none">
+				<td><a href="javascript:void(0);" onclick="toggle('prevTurn1');">Show/Hide Previous Turn</a></td>
+			</tr>
+			<tr id="prevTurn1" style="display: none; border-bottom: 15px solid #FFFFFF;">
+				<td><a href="javascript:void(0);" onclick="toggle('prevTurn1Spkr');">${prev_turn1_speaker}</a>
+						<span id="prevTurn1Spkr" style="display: none">[${prev_turn1_speaker_detail}]</span>: ${prev_turn1_text}</td>
+			</tr>
+			<tr>
+				<td rowspan="2" valign="top"><a href="javascript:void(0);" onclick="toggle('q1Spkr');">${q1_speaker}</a>
+					<span id="q1Spkr" style="display: none">[${q1_speaker_detail}]</span>: ${q1_text}
+				</td>
+				<th class="lbordernowrap" bgcolor="#fff4e6">How does the politician pose their question(s)?</th>
+			</tr>
+			<tr>
+				<td bgcolor="#fff4e6" class="lbordernowrap" valign="top">
+					<table>
+						<tbody>
+							<tr>
+								<td><a href="#" data-toggle="tooltip" data-placement="top" 
+									title="Q: <em><u>Would you just acknowledge that, yes</u></em>, Facebook is--<em><u>that is the business you are in</u></em>, gathering and aggregating that data? (you believe the politician is leading the witness to a 'yes' answer and makes an accusation that Facebook's main goal is to collect data)</br> Q: Do you think it would be reasonable for us to conclude that the President <em><u>by first interfering in one investigation and then interfering in an investigation into himself</em></u> committed obstruction of justice? (you believe the politician includes the controversial assumption that Trump interfered in investigations)" style="color: black;text-decoration:none;vertical-align:bottom;text-align:bottom;"><spansq>includes leading question, controversial assumption or attack?</spansq></a>
+								<label class="radio-inline"><input type="radio" onchange="toggleConditional('qLoad1', 'qFavor1', 'noLoad', ['qFavorYes1', 'qFavorNo1'])" name="qLoad1" id="qLoadYes1" value="yesLoad" required="required">yes</label>
+								<label class="radio-inline"><input type="radio" onchange="toggleConditional('qLoad1', 'qFavor1', 'noLoad',['qFavorYes1', 'qFavorNo1'])" name="qLoad1" id="qLoadNo1" value="noLoad" required="required">no</label>
+								</td>
+							</tr>
+							<tr id="qFavor1" style="display: none">
+								<td><a href="#" data-toggle="tooltip" data-placement="top" title="Q (to Mark Zuckerberg, CEO of Facebook):  I had a lot of people complain about ads but it is something I am willing to accept in return for a <em><u>free and valuable service</u></em>. So <em><u>you are not unique in Silicon Valley in doing this type of targeted ads, are you?</u></em> (you believe the politician is favoring Zuckerberg and asking him an easy question that makes Facebook look good)" style="color: black;text-decoration:none;vertical-align:bottom; text-align:bottom;"><spansq>includes question or statement favoring the witness?</spansq></a>
+								<label class="radio-inline"><input type="radio" name="qFavor1" id="qFavorYes1" value="yesFavor" required="required">yes</label>
+								<label class="radio-inline"><input type="radio" name="qFavor1" id="qFavorNo1" value="noFavor" required="required">no</label>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</td>
+			</tr>
+			<tr style="border-top: 15px solid #FFFFFF;">
+				<td valign="top" rowspan="6"><a href="javascript:void(0);" onclick="toggle('r1Spkr');">${r1_speaker}</a>
+					<span id="r1Spkr" style="display: none">[${r1_speaker_detail}]</span>: ${r1_text}
+				<th class="lbordernowrap" bgcolor="#f0f5f5" valign="top">How does the witness respond?</th>
+			</tr>
+			<tr>
+				<td class="lborderindentown"><div class="radio" style="margin:0%" data-toggle="tooltip" data-placement="top" title="Q: One of many, but not the sole factor?</br>Mr. Powell: <em><u>No. It is simply one of many.</em></u> (you believe Powell directly answers the question)</br></br>
+				Q: Can you elaborate on that?</br>
+				Mr. Powell: <u><em>So, before the financial crisis...</u></em> (you believe Powell indirectly answers the question)"><label><input id="rAns1" name="r1" onchange="toggleResponse(false, 1)" required="required" type="radio" value="answer" /><spansq>answers all reasonable questions</spansq></label></div></td>
+			</tr>
+			<tr>
+				<td class="lborderindentown"><div class="radio" style="margin:0%" data-toggle="tooltip" data-placement="top" title="Q: Do you recognize the gravity of your offenses? You are a lawyer, right?</br>
+				Mr. Cohen: <em><u>As of yesterday, I am no longer a lawyer. I have lost my law license, amongst other things.</em></u> (you believe Cohen doesn't answer the first question of whether he recognizes the gravity of his offenses)</br></br>
+				Q: Would Don Jr. or Mr. Weisselberg have more information?</br>
+				Mr. Cohen: <em><u>Mr. Weisselberg for sure, and Don Jr. would have cursory information.</em></u> (you believe Cohen doesn't answer the implied question 'What is the other information?', and instead only answers the literal question of whether or not they have information.)">
+				<label><input id="rPart1" name="r1" onchange="toggleResponse(false, 1)" required="required" type="radio" value="part-answer" /><spansq>answers partially or not all questions</spansq></label></div>
+			    </td>		
+			</tr>
+			<tr>
+				<td class="lborderindentown"><div class="radio" style="margin:0%" data-toggle="tooltip" data-placement="top" title="Q: I understand Facebook doesn't sell user data. Why wasn't explaining what Facebook does a higher priority?</br>
+				Mr. Zuckerberg: <em><u>Mr. Chairman, you are right that we don't sell any data, and I would say that we do try to explain what we do as time goes on. It is a broad system.</em></u> (you believe Zuckerberg doesn't answer the question of 'why it wasn't a higher priority' and instead shifts the question to: Do you sell user data? Do you explain this?)"><label><input id="rShift1" name="r1" onchange="toggleResponse(false, 1)" required="required" type="radio" value="shift" /><spansq>answers a different question</spansq></label></div></td>
+			</tr>
+			<tr>
+				<td class="lborderindentownwrap"><div class="radio" style="margin:0%" data-toggle="tooltip" data-placement="top" title="Mr. Powell: <em><u>I will speak to some of my research colleagues and get back to you.</u></em></span> (Powell says he doesn't know)</br></br>
+				
+				Attorney Sessions: <em><u>You're referring to my testimony at confirmation?</em></u> (Sessions asks for clarification)"><label><input id="rCantAnswer1" name="r1" onchange="toggleResponse(false, 1)" required="required" type="radio" value="cant-answer" /><spansq>says they don't understand/don't know/can't answer or asks a clarification question</spansq></label></div></td>
+			</tr>
+			<tr>
+				<td valign="top">
+					<table style="font-size: 1.0em;">
+						<tbody>
+							<tr id="part1_q1" style="display: none">
+								<th class="lbordertopspace" bgcolor="#f0f5f5">Witness intent for giving a partial answer?</th>
+							</tr>
+							<tr id="part2_q1" style="display: none">
+								<td class="lborderindentownwrap"><div class="radio" style="margin:0%" data-toggle="tooltip" data-placement="top" title="Q: Do you recognize the gravity of your offenses? You are a lawyer, right?</br>
+								Mr. Cohen: <em><u>As of yesterday, I am no longer a lawyer. I have lost my law license, amongst other things.</em></u> (you believe Cohen dodges the first question because it is unfavorable)"><label><input id="rPartDodge1" name="rPart1"  required="required" type="radio" value="part-dodge"/><spansq>to dodge an unfavorable question or question part</spansq></label></div></td>
+							</tr>	
+							<tr id="part3_q1" style="display: none">
+								<td class="lborderindentown"><div class="radio" style="margin:0%" data-toggle="tooltip" data-placement="top" title="Q: Do you recognize the gravity of your offenses? You are a lawyer, right?</br>
+								Mr. Cohen: <em><u>As of yesterday, I am no longer a lawyer. I have lost my law license, amongst other things.</em></u> (you believe the first question is rhetorical and so don't expect Cohen to answer it)"><label><input id="rPartCorrect1" name="rPart1" required="required" type="radio" value="part-ok"/><spansq>for a justified reason</spansq></label></div></td>
+							</tr>
+							<tr id="shift1_q1" style="display: none">
+								<th class="lbordertopspace" bgcolor="#f0f5f5">Witness intent for answering a different question?</th>
+							</tr>
+							<tr id="shift2_q1" style="display: none">
+								<td class="lborderindentownwrap"><div class="radio" style="margin:0%" data-toggle="tooltip" data-placement="top" title="Q: I understand that Facebook does not sell user data. Why wasn't explaining what Facebook does with users' data higher priority for you as a cofounder and now as CEO?</br>
+										Mr. Zuckerberg: <em><u>Mr. Chairman, you are right that we don't sell any data, and I would say that we do try to explain what we do as time goes on. It is a broad system.</u></em> (you believe Zuckerberg doesn't answer the question of <u>why explaining wasn't a higher priority</u>; he instead shifts the question to: Do you sell user data? Do you explain this?)"><label><input id="rShiftDodge1" name="rShift1"  required="required" type="radio" value="shift-dodge"/><spansq>to reformulate or evade an unfavorable question</spansq></label></div></td>
+							</tr>	
+							<tr id="shift3_q1" style="display: none">
+								<td class="lborderindentownwrap"><div class="radio" style="margin:0%" data-toggle="tooltip" data-placement="top" title="Q: When her hard drive failed, if you were properly backing up all the information required under the Federal Records Act, you would've had all those emails in your backup, wouldn't you?
+										</br>Mr. Koskinen: <em><u>All emails are not official records under any official records act. Only emails are saved that reflect agency actions.</em></u> (you believe Koskinen doesn't answer the question <u>would you have the emails?</u> because he instead corrects the politician's assumption about what actually gets backed up.)"><label><input id="rShiftCorrect1" name="rShift1" required="required" type="radio" value="shift-correct"/><spansq>to correct the questioner or other justified reason</spansq></label></div></td>
+							</tr>
+							<tr id="cant1_q1" style="display: none">
+								<th class="lbordertopspace" bgcolor="#f0f5f5">Witness intent for saying they can't answer?</th>
+							</tr>
+							<tr id="cant2_q1" style="display: none">
+								<td class="lborderindentown"><div class="radio" style="margin:0%" data-toggle="tooltip" data-placement="top" title="Q: Have you contacted anybody in the administration to advocate on your behalf?</br>
+									   Mr. Cohen: <em><u>I don't know what you are referring to, sir.</u></em> (you believe Cohen knows, but stalls for time)"><label><input id="rCantAnswerLying1" name="rCantAnswer1" required="required" type="radio" value="cant-answer-lying"/><spansq>you believe they're lying</spansq></label></div></td>
+							</tr>
+							<tr id="cant3_q1" style="display: none">
+								<td class="lborderindentown"><div class="radio" style="margin:0%" data-toggle="tooltip" data-placement="top" title="
+									   Mr. Powell: <u><em>I will speak to some of my research colleagues and get back to you.</u></em> (you believe Powell doesn't know)"><label><input id="rCantAnswerSincere1" name="rCantAnswer1" required="required" type="radio" value="cant-answer-sincere"/><spansq>you believe they're sincere</spansq></label></div></td>		
+							</tr>
+							<tr id="overans1_q1" style="display: none">
+								<th class="lbordertopspace" bgcolor="#f0f5f5">Witness provides extra info?</th>
+							</tr>
+							<tr id="overans2_q1" style="display: none">
+								<td class="lborderindentown"><div class="radio" style="margin:0%" data-toggle="tooltip" data-placement="top" title="You believe the witness provides extra information not asked for or expected by the politician."><label><input id="rOveransYes1" name="rOverans1" onchange="toggleEnable('rOverans1', ['rOveransSway1', 'rOveransHelp1'], ['textOveransSway1', 'textOveransHelp1'])" required="required" type="radio" value="overansYes" /><spansq>yes</spansq></label></div></td>
+							</tr>
+							<tr id="overans3_q1" style="display: none">
+								<td class="lborderdoubleindent"><div class="radio" style="margin:0%" data-toggle="tooltip" data-placement="top" title="Q: Did you ever disclose this issue on a 10-K filing?</br>
+								   Mr. Stumpf: <u><em><du>All of our K or Q filings are facts and circumstances, what we knew at the time</du>. And as recently as our second-quarter Q this year, when we use our disclosure teams and our compliance teams to look at this issue, the facts and circumstances, we believed, were not material.</u></em> (you believe Stumpf answers no, but also includes other information to give himself the benefit of the doubt, a way out)"><label><input id="rOveransSway1" name="rIntentOverans1" required="required" type="radio" value="overans-sway" disabled="disabled"/><spansqueeze id="textOveransSway1">to sway opinion in their favor</spansqueeze></label></div></td>
+							</tr>
+							<tr id="overans4_q1" style="display: none">
+								<td class="lborderdoubleindent"><div class="radio" style="margin:0%" data-toggle="tooltip" data-placement="top" title="Q: Does that increased credit risk in the loan market pose systemic vulnerabilities?</br>
+								  Mr. Powell: <em><u>We don't believe it poses systemic kinds of risks, but we do think it poses a macroeconomic risk, particularly in the event of an economic downturn. <du>These are companies that have borrowed in good times and borrowed high amounts of debt. And if there is a downturn, they will be less able to carry out their roles in the economy and that may have an amplification effect on a downturn.</du></u></em> (you believe Powell answers the question, then adds helpful and critical details to understand his answer)"><label><input id="rOveransHelp1" name="rIntentOverans1" required="required" type="radio" value="overans-helpful" disabled="disabled"/><spansqueeze id="textOveransHelp1">to be helpful or add critical details</spansqueeze></label></div></td>	
+							</tr>
+							<tr id="overans5_q1" style="display: none">
+								<td class="lborderindentown"><div class="radio" style="margin:0%" data-toggle="tooltip" data-placement="top" title="You believe the witness does not provide extra unsolicited information."><label><input id="rOveransNo1" name="rOverans1" onchange="toggleEnable('rOverans1', ['rOveransSway1', 'rOveransHelp1'], ['textOveransSway1', 'textOveransHelp1'])" required="required" type="radio" value="overansNo" /><spansq>no</spansq></label></div></td>
+							</tr>
+						</tbody>
+					</table>
+				</td>
+			</tr>
+			<tr id="showNextTurn1" style="display: none;border-top: 15px solid #FFFFFF;">
+			<td><a href="javascript:void(0);" onclick="toggle('nextTurn1');">Show/Hide Next Turn</a></td>
+			</tr>
+				<tr id="nextTurn1" style="display: none">
+					<td><a href="javascript:void(0);" onclick="toggle('nextTurn1Spkr');">${next_turn1_speaker}</a>
+						<span id="nextTurn1Spkr" style="display: none">[${next_turn1_speaker_detail}]</span>: ${next_turn1_text}</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<div class="input-group"></br>Please briefly explain all your choices for <span style="background-color:#f0f5f5"><strong><em>Witness Intent</em></strong></span>:
+		<textarea class="form-control" name="explainIntent1" required="required" minlength="10" rows="1" cols="100"></textarea>
+	</div>
+	</div>
+	</div>
+<div class="panel panel-success">
+	<div class="panel-heading"><strong>Question-Response 2 of 5</strong></div>
+
+	<div class="panel-body">
+	<table style="font-size: 1.0em;">
+		<tbody>
+			<tr id="showPrev2" style="display: none">
+				<td><a href="javascript:void(0);" onclick="toggle('prevTurn2');">Show/Hide Previous Turn</a></td>
+			</tr>
+			<tr id="prevTurn2" style="display: none; border-bottom: 15px solid #FFFFFF;">
+				<td><a href="javascript:void(0);" onclick="toggle('prevTurn2Spkr');">${prev_turn2_speaker}</a>
+						<span id="prevTurn2Spkr" style="display: none">[${prev_turn2_speaker_detail}]</span>: ${prev_turn2_text}</td>
+			</tr>
+			<tr>
+				<td rowspan="2" valign="top"><a href="javascript:void(0);" onclick="toggle('q2Spkr');">${q2_speaker}</a>
+					<span id="q2Spkr" style="display: none">[${q2_speaker_detail}]</span>: ${q2_text}
+				</td>
+				<th class="lbordernowrap" bgcolor="#fff4e6">How does the politician pose their question(s)?</th>
+			</tr>
+			<tr>
+				<td bgcolor="#fff4e6" class="lbordernowrap" valign="top">
+					<table>
+						<tbody>
+							<tr>
+								<td><a href="#" data-toggle="tooltip" data-placement="top" 
+									title="Q: <em><u>Would you just acknowledge that, yes</u></em>, Facebook is--<em><u>that is the business you are in</u></em>, gathering and aggregating that data? (you believe the politician is leading the witness to a 'yes' answer and makes an accusation that Facebook's main goal is to collect data)</br> Q: Do you think it would be reasonable for us to conclude that the President <em><u>by first interfering in one investigation and then interfering in an investigation into himself</em></u> committed obstruction of justice? (you believe the politician includes the controversial assumption that Trump interfered in investigations)" style="color: black;text-decoration:none;vertical-align:bottom;text-align:bottom;"><spansq>includes leading question, controversial assumption or attack?</spansq></a>
+								<label class="radio-inline"><input type="radio" onchange="toggleConditional('qLoad2', 'qFavor2', 'noLoad', ['qFavorYes2', 'qFavorNo2'])" name="qLoad2" id="qLoadYes2" value="yesLoad" required="required">yes</label>
+								<label class="radio-inline"><input type="radio" onchange="toggleConditional('qLoad2', 'qFavor2', 'noLoad',['qFavorYes2', 'qFavorNo2'])" name="qLoad2" id="qLoadNo2" value="noLoad" required="required">no</label>
+								</td>
+							</tr>
+							<tr id="qFavor2" style="display: none">
+								<td><a href="#" data-toggle="tooltip" data-placement="top" title="Q (to Mark Zuckerberg, CEO of Facebook):  I had a lot of people complain about ads but it is something I am willing to accept in return for a <em><u>free and valuable service</u></em>. So <em><u>you are not unique in Silicon Valley in doing this type of targeted ads, are you?</u></em> (you believe the politician is favoring Zuckerberg and asking him an easy question that makes Facebook look good)" style="color: black;text-decoration:none;vertical-align:bottom; text-align:bottom;"><spansq>includes question or statement favoring the witness?</spansq></a>
+								<label class="radio-inline"><input type="radio" name="qFavor2" id="qFavorYes2" value="yesFavor" required="required">yes</label>
+								<label class="radio-inline"><input type="radio" name="qFavor2" id="qFavorNo2" value="noFavor" required="required">no</label>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</td>
+			</tr>
+			<tr style="border-top: 15px solid #FFFFFF;">
+				<td valign="top" rowspan="6"><a href="javascript:void(0);" onclick="toggle('r2Spkr');">${r2_speaker}</a>
+					<span id="r2Spkr" style="display: none">[${r2_speaker_detail}]</span>: ${r2_text}
+				<th class="lbordernowrap" bgcolor="#f0f5f5" valign="top">How does the witness respond?</th>
+			</tr>
+			<tr>
+				<td class="lborderindentown"><div class="radio" style="margin:0%" data-toggle="tooltip" data-placement="top" title="Q: One of many, but not the sole factor?</br>Mr. Powell: <em><u>No. It is simply one of many.</em></u> (you believe Powell directly answers the question)</br></br>
+				Q: Can you elaborate on that?</br>
+				Mr. Powell: <u><em>So, before the financial crisis...</u></em> (you believe Powell indirectly answers the question)"><label><input id="rAns2" name="r2" onchange="toggleResponse(false, 2)" required="required" type="radio" value="answer" /><spansq>answers all reasonable questions</spansq></label></div></td>
+			</tr>
+			<tr>
+				<td class="lborderindentown"><div class="radio" style="margin:0%" data-toggle="tooltip" data-placement="top" title="Q: Do you recognize the gravity of your offenses? You are a lawyer, right?</br>
+				Mr. Cohen: <em><u>As of yesterday, I am no longer a lawyer. I have lost my law license, amongst other things.</em></u> (you believe Cohen doesn't answer the first question of whether he recognizes the gravity of his offenses)</br></br>
+				Q: Would Don Jr. or Mr. Weisselberg have more information?</br>
+				Mr. Cohen: <em><u>Mr. Weisselberg for sure, and Don Jr. would have cursory information.</em></u> (you believe Cohen doesn't answer the implied question 'What is the other information?', and instead only answers the literal question of whether or not they have information.)">
+				<label><input id="rPart2" name="r2" onchange="toggleResponse(false, 2)" required="required" type="radio" value="part-answer" /><spansq>answers partially or not all questions</spansq></label></div>
+			    </td>		
+			</tr>
+			<tr>
+				<td class="lborderindentown"><div class="radio" style="margin:0%" data-toggle="tooltip" data-placement="top" title="Q: I understand Facebook doesn't sell user data. Why wasn't explaining what Facebook does a higher priority?</br>
+				Mr. Zuckerberg: <em><u>Mr. Chairman, you are right that we don't sell any data, and I would say that we do try to explain what we do as time goes on. It is a broad system.</em></u> (you believe Zuckerberg doesn't answer the question of 'why it wasn't a higher priority' and instead shifts the question to: Do you sell user data? Do you explain this?)"><label><input id="rShift2" name="r2" onchange="toggleResponse(false, 2)" required="required" type="radio" value="shift" /><spansq>answers a different question</spansq></label></div></td>
+			</tr>
+			<tr>
+				<td class="lborderindentownwrap"><div class="radio" style="margin:0%" data-toggle="tooltip" data-placement="top" title="Mr. Powell: <em><u>I will speak to some of my research colleagues and get back to you.</u></em></span> (Powell says he doesn't know)</br></br>
+				
+				Attorney Sessions: <em><u>You're referring to my testimony at confirmation?</em></u> (Sessions asks for clarification)"><label><input id="rCantAnswer2" name="r2" onchange="toggleResponse(false, 2)" required="required" type="radio" value="cant-answer" /><spansq>says they don't understand/don't know/can't answer or asks a clarification question</spansq></label></div></td>
+			</tr>
+			<tr>
+				<td valign="top">
+					<table style="font-size: 1.0em;">
+						<tbody>
+							<tr id="part1_q2" style="display: none">
+								<th class="lbordertopspace" bgcolor="#f0f5f5">Witness intent for giving a partial answer?</th>
+							</tr>
+							<tr id="part2_q2" style="display: none">
+								<td class="lborderindentownwrap"><div class="radio" style="margin:0%" data-toggle="tooltip" data-placement="top" title="Q: Do you recognize the gravity of your offenses? You are a lawyer, right?</br>
+								Mr. Cohen: <em><u>As of yesterday, I am no longer a lawyer. I have lost my law license, amongst other things.</em></u> (you believe Cohen dodges the first question because it is unfavorable)"><label><input id="rPartDodge2" name="rPart2"  required="required" type="radio" value="part-dodge"/><spansq>to dodge an unfavorable question or question part</spansq></label></div></td>
+							</tr>	
+							<tr id="part3_q2" style="display: none">
+								<td class="lborderindentown"><div class="radio" style="margin:0%" data-toggle="tooltip" data-placement="top" title="Q: Do you recognize the gravity of your offenses? You are a lawyer, right?</br>
+								Mr. Cohen: <em><u>As of yesterday, I am no longer a lawyer. I have lost my law license, amongst other things.</em></u> (you believe the first question is rhetorical and so don't expect Cohen to answer it)"><label><input id="rPartCorrect2" name="rPart2" required="required" type="radio" value="part-ok"/><spansq>for a justified reason</spansq></label></div></td>
+							</tr>
+							<tr id="shift1_q2" style="display: none">
+								<th class="lbordertopspace" bgcolor="#f0f5f5">Witness intent for answering a different question?</th>
+							</tr>
+							<tr id="shift2_q2" style="display: none">
+								<td class="lborderindentownwrap"><div class="radio" style="margin:0%" data-toggle="tooltip" data-placement="top" title="Q: I understand that Facebook does not sell user data. Why wasn't explaining what Facebook does with users' data higher priority for you as a cofounder and now as CEO?</br>
+										Mr. Zuckerberg: <em><u>Mr. Chairman, you are right that we don't sell any data, and I would say that we do try to explain what we do as time goes on. It is a broad system.</u></em> (you believe Zuckerberg doesn't answer the question of <u>why explaining wasn't a higher priority</u>; he instead shifts the question to: Do you sell user data? Do you explain this?)"><label><input id="rShiftDodge2" name="rShift2"  required="required" type="radio" value="shift-dodge"/><spansq>to reformulate or evade an unfavorable question</spansq></label></div></td>
+							</tr>	
+							<tr id="shift3_q2" style="display: none">
+								<td class="lborderindentownwrap"><div class="radio" style="margin:0%" data-toggle="tooltip" data-placement="top" title="Q: When her hard drive failed, if you were properly backing up all the information required under the Federal Records Act, you would've had all those emails in your backup, wouldn't you?
+										</br>Mr. Koskinen: <em><u>All emails are not official records under any official records act. Only emails are saved that reflect agency actions.</em></u> (you believe Koskinen doesn't answer the question <u>would you have the emails?</u> because he instead corrects the politician's assumption about what actually gets backed up.)"><label><input id="rShiftCorrect2" name="rShift2" required="required" type="radio" value="shift-correct"/><spansq>to correct the questioner or other justified reason</spansq></label></div></td>
+							</tr>
+							<tr id="cant1_q2" style="display: none">
+								<th class="lbordertopspace" bgcolor="#f0f5f5">Witness intent for saying they can't answer?</th>
+							</tr>
+							<tr id="cant2_q2" style="display: none">
+								<td class="lborderindentown"><div class="radio" style="margin:0%" data-toggle="tooltip" data-placement="top" title="Q: Have you contacted anybody in the administration to advocate on your behalf?</br>
+									   Mr. Cohen: <em><u>I don't know what you are referring to, sir.</u></em> (you believe Cohen knows, but stalls for time)"><label><input id="rCantAnswerLying2" name="rCantAnswer2" required="required" type="radio" value="cant-answer-lying"/><spansq>you believe they're lying</spansq></label></div></td>
+							</tr>
+							<tr id="cant3_q2" style="display: none">
+								<td class="lborderindentown"><div class="radio" style="margin:0%" data-toggle="tooltip" data-placement="top" title="
+									   Mr. Powell: <u><em>I will speak to some of my research colleagues and get back to you.</u></em> (you believe Powell doesn't know)"><label><input id="rCantAnswerSincere2" name="rCantAnswer2" required="required" type="radio" value="cant-answer-sincere"/><spansq>you believe they're sincere</spansq></label></div></td>		
+							</tr>
+							<tr id="overans1_q2" style="display: none">
+								<th class="lbordertopspace" bgcolor="#f0f5f5">Witness provides extra info?</th>
+							</tr>
+							<tr id="overans2_q2" style="display: none">
+								<td class="lborderindentown"><div class="radio" style="margin:0%" data-toggle="tooltip" data-placement="top" title="You believe the witness provides extra information not asked for or expected by the politician."><label><input id="rOveransYes2" name="rOverans2" onchange="toggleEnable('rOverans2', ['rOveransSway2', 'rOveransHelp2'], ['textOveransSway2', 'textOveransHelp2'])" required="required" type="radio" value="overansYes" /><spansq>yes</spansq></label></div></td>
+							</tr>
+							<tr id="overans3_q2" style="display: none">
+								<td class="lborderdoubleindent"><div class="radio" style="margin:0%" data-toggle="tooltip" data-placement="top" title="Q: Did you ever disclose this issue on a 10-K filing?</br>
+								   Mr. Stumpf: <u><em><du>All of our K or Q filings are facts and circumstances, what we knew at the time</du>. And as recently as our second-quarter Q this year, when we use our disclosure teams and our compliance teams to look at this issue, the facts and circumstances, we believed, were not material.</u></em> (you believe Stumpf answers no, but also includes other information to give himself the benefit of the doubt, a way out)"><label><input id="rOveransSway2" name="rIntentOverans2" required="required" type="radio" value="overans-sway" disabled="disabled"/><spansqueeze id="textOveransSway2">to sway opinion in their favor</spansqueeze></label></div></td>
+							</tr>
+							<tr id="overans4_q2" style="display: none">
+								<td class="lborderdoubleindent"><div class="radio" style="margin:0%" data-toggle="tooltip" data-placement="top" title="Q: Does that increased credit risk in the loan market pose systemic vulnerabilities?</br>
+								  Mr. Powell: <em><u>We don't believe it poses systemic kinds of risks, but we do think it poses a macroeconomic risk, particularly in the event of an economic downturn. <du>These are companies that have borrowed in good times and borrowed high amounts of debt. And if there is a downturn, they will be less able to carry out their roles in the economy and that may have an amplification effect on a downturn.</du></u></em> (you believe Powell answers the question, then adds helpful and critical details to understand his answer)"><label><input id="rOveransHelp2" name="rIntentOverans2" required="required" type="radio" value="overans-helpful" disabled="disabled"/><spansqueeze id="textOveransHelp2">to be helpful or add critical details</spansqueeze></label></div></td>	
+							</tr>
+							<tr id="overans5_q2" style="display: none">
+								<td class="lborderindentown"><div class="radio" style="margin:0%" data-toggle="tooltip" data-placement="top" title="You believe the witness does not provide extra unsolicited information."><label><input id="rOveransNo2" name="rOverans2" onchange="toggleEnable('rOverans2', ['rOveransSway2', 'rOveransHelp2'], ['textOveransSway2', 'textOveransHelp2'])" required="required" type="radio" value="overansNo" /><spansq>no</spansq></label></div></td>
+							</tr>
+						</tbody>
+					</table>
+				</td>
+			</tr>
+			<tr id="showNextTurn2" style="display: none;border-top: 15px solid #FFFFFF;">
+			<td><a href="javascript:void(0);" onclick="toggle('nextTurn2');">Show/Hide Next Turn</a></td>
+			</tr>
+				<tr id="nextTurn2" style="display: none">
+					<td><a href="javascript:void(0);" onclick="toggle('nextTurn2Spkr');">${next_turn2_speaker}</a>
+						<span id="nextTurn2Spkr" style="display: none">[${next_turn2_speaker_detail}]</span>: ${next_turn2_text}</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<div class="input-group"></br>Please briefly explain all your choices for <span style="background-color:#f0f5f5"><strong><em>Witness Intent</em></strong></span>:
+		<textarea class="form-control" name="explainIntent2" required="required" minlength="10" rows="1" cols="100"></textarea>
+	</div>
+	</div>
+	</div>
+
+<div class="panel panel-success">
+	<div class="panel-heading"><strong>Question-Response 3 of 5</strong></div>
+
+	<div class="panel-body">
+	<table style="font-size: 1.0em;">
+		<tbody>
+			<tr id="showPrev3" style="display: none">
+				<td><a href="javascript:void(0);" onclick="toggle('prevTurn3');">Show/Hide Previous Turn</a></td>
+			</tr>
+			<tr id="prevTurn3" style="display: none; border-bottom: 15px solid #FFFFFF;">
+				<td><a href="javascript:void(0);" onclick="toggle('prevTurn3Spkr');">${prev_turn3_speaker}</a>
+						<span id="prevTurn3Spkr" style="display: none">[${prev_turn3_speaker_detail}]</span>: ${prev_turn3_text}</td>
+			</tr>
+			<tr>
+				<td rowspan="2" valign="top"><a href="javascript:void(0);" onclick="toggle('q3Spkr');">${q3_speaker}</a>
+					<span id="q3Spkr" style="display: none">[${q3_speaker_detail}]</span>: ${q3_text}
+				</td>
+				<th class="lbordernowrap" bgcolor="#fff4e6">How does the politician pose their question(s)?</th>
+			</tr>
+			<tr>
+				<td bgcolor="#fff4e6" class="lbordernowrap" valign="top">
+					<table>
+						<tbody>
+							<tr>
+								<td><a href="#" data-toggle="tooltip" data-placement="top" 
+									title="Q: <em><u>Would you just acknowledge that, yes</u></em>, Facebook is--<em><u>that is the business you are in</u></em>, gathering and aggregating that data? (you believe the politician is leading the witness to a 'yes' answer and makes an accusation that Facebook's main goal is to collect data)</br> Q: Do you think it would be reasonable for us to conclude that the President <em><u>by first interfering in one investigation and then interfering in an investigation into himself</em></u> committed obstruction of justice? (you believe the politician includes the controversial assumption that Trump interfered in investigations)" style="color: black;text-decoration:none;vertical-align:bottom;text-align:bottom;"><spansq>includes leading question, controversial assumption or attack?</spansq></a>
+								<label class="radio-inline"><input type="radio" onchange="toggleConditional('qLoad3', 'qFavor3', 'noLoad', ['qFavorYes3', 'qFavorNo3'])" name="qLoad3" id="qLoadYes3" value="yesLoad" required="required">yes</label>
+								<label class="radio-inline"><input type="radio" onchange="toggleConditional('qLoad3', 'qFavor3', 'noLoad',['qFavorYes3', 'qFavorNo3'])" name="qLoad3" id="qLoadNo3" value="noLoad" required="required">no</label>
+								</td>
+							</tr>
+							<tr id="qFavor3" style="display: none">
+								<td><a href="#" data-toggle="tooltip" data-placement="top" title="Q (to Mark Zuckerberg, CEO of Facebook):  I had a lot of people complain about ads but it is something I am willing to accept in return for a <em><u>free and valuable service</u></em>. So <em><u>you are not unique in Silicon Valley in doing this type of targeted ads, are you?</u></em> (you believe the politician is favoring Zuckerberg and asking him an easy question that makes Facebook look good)" style="color: black;text-decoration:none;vertical-align:bottom; text-align:bottom;"><spansq>includes question or statement favoring the witness?</spansq></a>
+								<label class="radio-inline"><input type="radio" name="qFavor3" id="qFavorYes3" value="yesFavor" required="required">yes</label>
+								<label class="radio-inline"><input type="radio" name="qFavor3" id="qFavorNo3" value="noFavor" required="required">no</label>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</td>
+			</tr>
+			<tr style="border-top: 15px solid #FFFFFF;">
+				<td valign="top" rowspan="6"><a href="javascript:void(0);" onclick="toggle('r3Spkr');">${r3_speaker}</a>
+					<span id="r3Spkr" style="display: none">[${r3_speaker_detail}]</span>: ${r3_text}
+				<th class="lbordernowrap" bgcolor="#f0f5f5" valign="top">How does the witness respond?</th>
+			</tr>
+			<tr>
+				<td class="lborderindentown"><div class="radio" style="margin:0%" data-toggle="tooltip" data-placement="top" title="Q: One of many, but not the sole factor?</br>Mr. Powell: <em><u>No. It is simply one of many.</em></u> (you believe Powell directly answers the question)</br></br>
+				Q: Can you elaborate on that?</br>
+				Mr. Powell: <u><em>So, before the financial crisis...</u></em> (you believe Powell indirectly answers the question)"><label><input id="rAns3" name="r3" onchange="toggleResponse(false, 3)" required="required" type="radio" value="answer" /><spansq>answers all reasonable questions</spansq></label></div></td>
+			</tr>
+			<tr>
+				<td class="lborderindentown"><div class="radio" style="margin:0%" data-toggle="tooltip" data-placement="top" title="Q: Do you recognize the gravity of your offenses? You are a lawyer, right?</br>
+				Mr. Cohen: <em><u>As of yesterday, I am no longer a lawyer. I have lost my law license, amongst other things.</em></u> (you believe Cohen doesn't answer the first question of whether he recognizes the gravity of his offenses)</br></br>
+				Q: Would Don Jr. or Mr. Weisselberg have more information?</br>
+				Mr. Cohen: <em><u>Mr. Weisselberg for sure, and Don Jr. would have cursory information.</em></u> (you believe Cohen doesn't answer the implied question 'What is the other information?', and instead only answers the literal question of whether or not they have information.)">
+				<label><input id="rPart3" name="r3" onchange="toggleResponse(false, 3)" required="required" type="radio" value="part-answer" /><spansq>answers partially or not all questions</spansq></label></div>
+			    </td>		
+			</tr>
+			<tr>
+				<td class="lborderindentown"><div class="radio" style="margin:0%" data-toggle="tooltip" data-placement="top" title="Q: I understand Facebook doesn't sell user data. Why wasn't explaining what Facebook does a higher priority?</br>
+				Mr. Zuckerberg: <em><u>Mr. Chairman, you are right that we don't sell any data, and I would say that we do try to explain what we do as time goes on. It is a broad system.</em></u> (you believe Zuckerberg doesn't answer the question of 'why it wasn't a higher priority' and instead shifts the question to: Do you sell user data? Do you explain this?)"><label><input id="rShift3" name="r3" onchange="toggleResponse(false, 3)" required="required" type="radio" value="shift" /><spansq>answers a different question</spansq></label></div></td>
+			</tr>
+			<tr>
+				<td class="lborderindentownwrap"><div class="radio" style="margin:0%" data-toggle="tooltip" data-placement="top" title="Mr. Powell: <em><u>I will speak to some of my research colleagues and get back to you.</u></em></span> (Powell says he doesn't know)</br></br>
+				
+				Attorney Sessions: <em><u>You're referring to my testimony at confirmation?</em></u> (Sessions asks for clarification)"><label><input id="rCantAnswer3" name="r3" onchange="toggleResponse(false, 3)" required="required" type="radio" value="cant-answer" /><spansq>says they don't understand/don't know/can't answer or asks a clarification question</spansq></label></div></td>
+			</tr>
+			<tr>
+				<td valign="top">
+					<table style="font-size: 1.0em;">
+						<tbody>
+							<tr id="part1_q3" style="display: none">
+								<th class="lbordertopspace" bgcolor="#f0f5f5">Witness intent for giving a partial answer?</th>
+							</tr>
+							<tr id="part2_q3" style="display: none">
+								<td class="lborderindentownwrap"><div class="radio" style="margin:0%" data-toggle="tooltip" data-placement="top" title="Q: Do you recognize the gravity of your offenses? You are a lawyer, right?</br>
+								Mr. Cohen: <em><u>As of yesterday, I am no longer a lawyer. I have lost my law license, amongst other things.</em></u> (you believe Cohen dodges the first question because it is unfavorable)"><label><input id="rPartDodge3" name="rPart3"  required="required" type="radio" value="part-dodge"/><spansq>to dodge an unfavorable question or question part</spansq></label></div></td>
+							</tr>	
+							<tr id="part3_q3" style="display: none">
+								<td class="lborderindentown"><div class="radio" style="margin:0%" data-toggle="tooltip" data-placement="top" title="Q: Do you recognize the gravity of your offenses? You are a lawyer, right?</br>
+								Mr. Cohen: <em><u>As of yesterday, I am no longer a lawyer. I have lost my law license, amongst other things.</em></u> (you believe the first question is rhetorical and so don't expect Cohen to answer it)"><label><input id="rPartCorrect3" name="rPart3" required="required" type="radio" value="part-ok"/><spansq>for a justified reason</spansq></label></div></td>
+							</tr>
+							<tr id="shift1_q3" style="display: none">
+								<th class="lbordertopspace" bgcolor="#f0f5f5">Witness intent for answering a different question?</th>
+							</tr>
+							<tr id="shift2_q3" style="display: none">
+								<td class="lborderindentownwrap"><div class="radio" style="margin:0%" data-toggle="tooltip" data-placement="top" title="Q: I understand that Facebook does not sell user data. Why wasn't explaining what Facebook does with users' data higher priority for you as a cofounder and now as CEO?</br>
+										Mr. Zuckerberg: <em><u>Mr. Chairman, you are right that we don't sell any data, and I would say that we do try to explain what we do as time goes on. It is a broad system.</u></em> (you believe Zuckerberg doesn't answer the question of <u>why explaining wasn't a higher priority</u>; he instead shifts the question to: Do you sell user data? Do you explain this?)"><label><input id="rShiftDodge3" name="rShift3"  required="required" type="radio" value="shift-dodge"/><spansq>to reformulate or evade an unfavorable question</spansq></label></div></td>
+							</tr>	
+							<tr id="shift3_q3" style="display: none">
+								<td class="lborderindentownwrap"><div class="radio" style="margin:0%" data-toggle="tooltip" data-placement="top" title="Q: When her hard drive failed, if you were properly backing up all the information required under the Federal Records Act, you would've had all those emails in your backup, wouldn't you?
+										</br>Mr. Koskinen: <em><u>All emails are not official records under any official records act. Only emails are saved that reflect agency actions.</em></u> (you believe Koskinen doesn't answer the question <u>would you have the emails?</u> because he instead corrects the politician's assumption about what actually gets backed up.)"><label><input id="rShiftCorrect3" name="rShift3" required="required" type="radio" value="shift-correct"/><spansq>to correct the questioner or other justified reason</spansq></label></div></td>
+							</tr>
+							<tr id="cant1_q3" style="display: none">
+								<th class="lbordertopspace" bgcolor="#f0f5f5">Witness intent for saying they can't answer?</th>
+							</tr>
+							<tr id="cant2_q3" style="display: none">
+								<td class="lborderindentown"><div class="radio" style="margin:0%" data-toggle="tooltip" data-placement="top" title="Q: Have you contacted anybody in the administration to advocate on your behalf?</br>
+									   Mr. Cohen: <em><u>I don't know what you are referring to, sir.</u></em> (you believe Cohen knows, but stalls for time)"><label><input id="rCantAnswerLying3" name="rCantAnswer3" required="required" type="radio" value="cant-answer-lying"/><spansq>you believe they're lying</spansq></label></div></td>
+							</tr>
+							<tr id="cant3_q3" style="display: none">
+								<td class="lborderindentown"><div class="radio" style="margin:0%" data-toggle="tooltip" data-placement="top" title="
+									   Mr. Powell: <u><em>I will speak to some of my research colleagues and get back to you.</u></em> (you believe Powell doesn't know)"><label><input id="rCantAnswerSincere3" name="rCantAnswer3" required="required" type="radio" value="cant-answer-sincere"/><spansq>you believe they're sincere</spansq></label></div></td>		
+							</tr>
+							<tr id="overans1_q3" style="display: none">
+								<th class="lbordertopspace" bgcolor="#f0f5f5">Witness provides extra info?</th>
+							</tr>
+							<tr id="overans2_q3" style="display: none">
+								<td class="lborderindentown"><div class="radio" style="margin:0%" data-toggle="tooltip" data-placement="top" title="You believe the witness provides extra information not asked for or expected by the politician."><label><input id="rOveransYes3" name="rOverans3" onchange="toggleEnable('rOverans3', ['rOveransSway3', 'rOveransHelp3'], ['textOveransSway3', 'textOveransHelp3'])" required="required" type="radio" value="overansYes" /><spansq>yes</spansq></label></div></td>
+							</tr>
+							<tr id="overans3_q3" style="display: none">
+								<td class="lborderdoubleindent"><div class="radio" style="margin:0%" data-toggle="tooltip" data-placement="top" title="Q: Did you ever disclose this issue on a 10-K filing?</br>
+								   Mr. Stumpf: <u><em><du>All of our K or Q filings are facts and circumstances, what we knew at the time</du>. And as recently as our second-quarter Q this year, when we use our disclosure teams and our compliance teams to look at this issue, the facts and circumstances, we believed, were not material.</u></em> (you believe Stumpf answers no, but also includes other information to give himself the benefit of the doubt, a way out)"><label><input id="rOveransSway3" name="rIntentOverans3" required="required" type="radio" value="overans-sway" disabled="disabled"/><spansqueeze id="textOveransSway3">to sway opinion in their favor</spansqueeze></label></div></td>
+							</tr>
+							<tr id="overans4_q3" style="display: none">
+								<td class="lborderdoubleindent"><div class="radio" style="margin:0%" data-toggle="tooltip" data-placement="top" title="Q: Does that increased credit risk in the loan market pose systemic vulnerabilities?</br>
+								  Mr. Powell: <em><u>We don't believe it poses systemic kinds of risks, but we do think it poses a macroeconomic risk, particularly in the event of an economic downturn. <du>These are companies that have borrowed in good times and borrowed high amounts of debt. And if there is a downturn, they will be less able to carry out their roles in the economy and that may have an amplification effect on a downturn.</du></u></em> (you believe Powell answers the question, then adds helpful and critical details to understand his answer)"><label><input id="rOveransHelp3" name="rIntentOverans3" required="required" type="radio" value="overans-helpful" disabled="disabled"/><spansqueeze id="textOveransHelp3">to be helpful or add critical details</spansqueeze></label></div></td>	
+							</tr>
+							<tr id="overans5_q3" style="display: none">
+								<td class="lborderindentown"><div class="radio" style="margin:0%" data-toggle="tooltip" data-placement="top" title="You believe the witness does not provide extra unsolicited information."><label><input id="rOveransNo3" name="rOverans3" onchange="toggleEnable('rOverans3', ['rOveransSway3', 'rOveransHelp3'], ['textOveransSway3', 'textOveransHelp3'])" required="required" type="radio" value="overansNo" /><spansq>no</spansq></label></div></td>
+							</tr>
+						</tbody>
+					</table>
+				</td>
+			</tr>
+			<tr id="showNextTurn3" style="display: none;border-top: 15px solid #FFFFFF;">
+			<td><a href="javascript:void(0);" onclick="toggle('nextTurn3');">Show/Hide Next Turn</a></td>
+			</tr>
+				<tr id="nextTurn3" style="display: none">
+					<td><a href="javascript:void(0);" onclick="toggle('nextTurn3Spkr');">${next_turn3_speaker}</a>
+						<span id="nextTurn3Spkr" style="display: none">[${next_turn3_speaker_detail}]</span>: ${next_turn3_text}</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<div class="input-group"></br>Please briefly explain all your choices for <span style="background-color:#f0f5f5"><strong><em>Witness Intent</em></strong></span>:
+		<textarea class="form-control" name="explainIntent3" required="required" minlength="10" rows="1" cols="100"></textarea>
+	</div>
+	</div>
+	</div>
+
+	<div class="panel panel-success">
+	<div class="panel-heading"><strong>Question-Response 4 of 5</strong></div>
+
+	<div class="panel-body">
+	<table style="font-size: 1.0em;">
+		<tbody>
+			<tr id="showPrev4" style="display: none">
+				<td><a href="javascript:void(0);" onclick="toggle('prevTurn4');">Show/Hide Previous Turn</a></td>
+			</tr>
+			<tr id="prevTurn4" style="display: none; border-bottom: 15px solid #FFFFFF;">
+				<td><a href="javascript:void(0);" onclick="toggle('prevTurn4Spkr');">${prev_turn4_speaker}</a>
+						<span id="prevTurn4Spkr" style="display: none">[${prev_turn4_speaker_detail}]</span>: ${prev_turn4_text}</td>
+			</tr>
+			<tr>
+				<td rowspan="2" valign="top"><a href="javascript:void(0);" onclick="toggle('q4Spkr');">${q4_speaker}</a>
+					<span id="q4Spkr" style="display: none">[${q4_speaker_detail}]</span>: ${q4_text}
+				</td>
+				<th class="lbordernowrap" bgcolor="#fff4e6">How does the politician pose their question(s)?</th>
+			</tr>
+			<tr>
+				<td bgcolor="#fff4e6" class="lbordernowrap" valign="top">
+					<table>
+						<tbody>
+							<tr>
+								<td><a href="#" data-toggle="tooltip" data-placement="top" 
+									title="Q: <em><u>Would you just acknowledge that, yes</u></em>, Facebook is--<em><u>that is the business you are in</u></em>, gathering and aggregating that data? (you believe the politician is leading the witness to a 'yes' answer and makes an accusation that Facebook's main goal is to collect data)</br> Q: Do you think it would be reasonable for us to conclude that the President <em><u>by first interfering in one investigation and then interfering in an investigation into himself</em></u> committed obstruction of justice? (you believe the politician includes the controversial assumption that Trump interfered in investigations)" style="color: black;text-decoration:none;vertical-align:bottom;text-align:bottom;"><spansq>includes leading question, controversial assumption or attack?</spansq></a>
+								<label class="radio-inline"><input type="radio" onchange="toggleConditional('qLoad4', 'qFavor4', 'noLoad', ['qFavorYes4', 'qFavorNo4'])" name="qLoad4" id="qLoadYes4" value="yesLoad" required="required">yes</label>
+								<label class="radio-inline"><input type="radio" onchange="toggleConditional('qLoad4', 'qFavor4', 'noLoad',['qFavorYes4', 'qFavorNo4'])" name="qLoad4" id="qLoadNo4" value="noLoad" required="required">no</label>
+								</td>
+							</tr>
+							<tr id="qFavor4" style="display: none">
+								<td><a href="#" data-toggle="tooltip" data-placement="top" title="Q (to Mark Zuckerberg, CEO of Facebook):  I had a lot of people complain about ads but it is something I am willing to accept in return for a <em><u>free and valuable service</u></em>. So <em><u>you are not unique in Silicon Valley in doing this type of targeted ads, are you?</u></em> (you believe the politician is favoring Zuckerberg and asking him an easy question that makes Facebook look good)" style="color: black;text-decoration:none;vertical-align:bottom; text-align:bottom;"><spansq>includes question or statement favoring the witness?</spansq></a>
+								<label class="radio-inline"><input type="radio" name="qFavor4" id="qFavorYes4" value="yesFavor" required="required">yes</label>
+								<label class="radio-inline"><input type="radio" name="qFavor4" id="qFavorNo4" value="noFavor" required="required">no</label>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</td>
+			</tr>
+			<tr style="border-top: 15px solid #FFFFFF;">
+				<td valign="top" rowspan="6"><a href="javascript:void(0);" onclick="toggle('r4Spkr');">${r4_speaker}</a>
+					<span id="r4Spkr" style="display: none">[${r4_speaker_detail}]</span>: ${r4_text}
+				<th class="lbordernowrap" bgcolor="#f0f5f5" valign="top">How does the witness respond?</th>
+			</tr>
+			<tr>
+				<td class="lborderindentown"><div class="radio" style="margin:0%" data-toggle="tooltip" data-placement="top" title="Q: One of many, but not the sole factor?</br>Mr. Powell: <em><u>No. It is simply one of many.</em></u> (you believe Powell directly answers the question)</br></br>
+				Q: Can you elaborate on that?</br>
+				Mr. Powell: <u><em>So, before the financial crisis...</u></em> (you believe Powell indirectly answers the question)"><label><input id="rAns4" name="r4" onchange="toggleResponse(false, 4)" required="required" type="radio" value="answer" /><spansq>answers all reasonable questions</spansq></label></div></td>
+			</tr>
+			<tr>
+				<td class="lborderindentown"><div class="radio" style="margin:0%" data-toggle="tooltip" data-placement="top" title="Q: Do you recognize the gravity of your offenses? You are a lawyer, right?</br>
+				Mr. Cohen: <em><u>As of yesterday, I am no longer a lawyer. I have lost my law license, amongst other things.</em></u> (you believe Cohen doesn't answer the first question of whether he recognizes the gravity of his offenses)</br></br>
+				Q: Would Don Jr. or Mr. Weisselberg have more information?</br>
+				Mr. Cohen: <em><u>Mr. Weisselberg for sure, and Don Jr. would have cursory information.</em></u> (you believe Cohen doesn't answer the implied question 'What is the other information?', and instead only answers the literal question of whether or not they have information.)">
+				<label><input id="rPart4" name="r4" onchange="toggleResponse(false, 4)" required="required" type="radio" value="part-answer" /><spansq>answers partially or not all questions</spansq></label></div>
+			    </td>		
+			</tr>
+			<tr>
+				<td class="lborderindentown"><div class="radio" style="margin:0%" data-toggle="tooltip" data-placement="top" title="Q: I understand Facebook doesn't sell user data. Why wasn't explaining what Facebook does a higher priority?</br>
+				Mr. Zuckerberg: <em><u>Mr. Chairman, you are right that we don't sell any data, and I would say that we do try to explain what we do as time goes on. It is a broad system.</em></u> (you believe Zuckerberg doesn't answer the question of 'why it wasn't a higher priority' and instead shifts the question to: Do you sell user data? Do you explain this?)"><label><input id="rShift4" name="r4" onchange="toggleResponse(false, 4)" required="required" type="radio" value="shift" /><spansq>answers a different question</spansq></label></div></td>
+			</tr>
+			<tr>
+				<td class="lborderindentownwrap"><div class="radio" style="margin:0%" data-toggle="tooltip" data-placement="top" title="Mr. Powell: <em><u>I will speak to some of my research colleagues and get back to you.</u></em></span> (Powell says he doesn't know)</br></br>
+				
+				Attorney Sessions: <em><u>You're referring to my testimony at confirmation?</em></u> (Sessions asks for clarification)"><label><input id="rCantAnswer4" name="r4" onchange="toggleResponse(false, 4)" required="required" type="radio" value="cant-answer" /><spansq>says they don't understand/don't know/can't answer or asks a clarification question</spansq></label></div></td>
+			</tr>
+			<tr>
+				<td valign="top">
+					<table style="font-size: 1.0em;">
+						<tbody>
+							<tr id="part1_q4" style="display: none">
+								<th class="lbordertopspace" bgcolor="#f0f5f5">Witness intent for giving a partial answer?</th>
+							</tr>
+							<tr id="part2_q4" style="display: none">
+								<td class="lborderindentownwrap"><div class="radio" style="margin:0%" data-toggle="tooltip" data-placement="top" title="Q: Do you recognize the gravity of your offenses? You are a lawyer, right?</br>
+								Mr. Cohen: <em><u>As of yesterday, I am no longer a lawyer. I have lost my law license, amongst other things.</em></u> (you believe Cohen dodges the first question because it is unfavorable)"><label><input id="rPartDodge4" name="rPart4"  required="required" type="radio" value="part-dodge"/><spansq>to dodge an unfavorable question or question part</spansq></label></div></td>
+							</tr>	
+							<tr id="part3_q4" style="display: none">
+								<td class="lborderindentown"><div class="radio" style="margin:0%" data-toggle="tooltip" data-placement="top" title="Q: Do you recognize the gravity of your offenses? You are a lawyer, right?</br>
+								Mr. Cohen: <em><u>As of yesterday, I am no longer a lawyer. I have lost my law license, amongst other things.</em></u> (you believe the first question is rhetorical and so don't expect Cohen to answer it)"><label><input id="rPartCorrect4" name="rPart4" required="required" type="radio" value="part-ok"/><spansq>for a justified reason</spansq></label></div></td>
+							</tr>
+							<tr id="shift1_q4" style="display: none">
+								<th class="lbordertopspace" bgcolor="#f0f5f5">Witness intent for answering a different question?</th>
+							</tr>
+							<tr id="shift2_q4" style="display: none">
+								<td class="lborderindentownwrap"><div class="radio" style="margin:0%" data-toggle="tooltip" data-placement="top" title="Q: I understand that Facebook does not sell user data. Why wasn't explaining what Facebook does with users' data higher priority for you as a cofounder and now as CEO?</br>
+										Mr. Zuckerberg: <em><u>Mr. Chairman, you are right that we don't sell any data, and I would say that we do try to explain what we do as time goes on. It is a broad system.</u></em> (you believe Zuckerberg doesn't answer the question of <u>why explaining wasn't a higher priority</u>; he instead shifts the question to: Do you sell user data? Do you explain this?)"><label><input id="rShiftDodge4" name="rShift4"  required="required" type="radio" value="shift-dodge"/><spansq>to reformulate or evade an unfavorable question</spansq></label></div></td>
+							</tr>	
+							<tr id="shift3_q4" style="display: none">
+								<td class="lborderindentownwrap"><div class="radio" style="margin:0%" data-toggle="tooltip" data-placement="top" title="Q: When her hard drive failed, if you were properly backing up all the information required under the Federal Records Act, you would've had all those emails in your backup, wouldn't you?
+										</br>Mr. Koskinen: <em><u>All emails are not official records under any official records act. Only emails are saved that reflect agency actions.</em></u> (you believe Koskinen doesn't answer the question <u>would you have the emails?</u> because he instead corrects the politician's assumption about what actually gets backed up.)"><label><input id="rShiftCorrect4" name="rShift4" required="required" type="radio" value="shift-correct"/><spansq>to correct the questioner or other justified reason</spansq></label></div></td>
+							</tr>
+							<tr id="cant1_q4" style="display: none">
+								<th class="lbordertopspace" bgcolor="#f0f5f5">Witness intent for saying they can't answer?</th>
+							</tr>
+							<tr id="cant2_q4" style="display: none">
+								<td class="lborderindentown"><div class="radio" style="margin:0%" data-toggle="tooltip" data-placement="top" title="Q: Have you contacted anybody in the administration to advocate on your behalf?</br>
+									   Mr. Cohen: <em><u>I don't know what you are referring to, sir.</u></em> (you believe Cohen knows, but stalls for time)"><label><input id="rCantAnswerLying4" name="rCantAnswer4" required="required" type="radio" value="cant-answer-lying"/><spansq>you believe they're lying</spansq></label></div></td>
+							</tr>
+							<tr id="cant3_q4" style="display: none">
+								<td class="lborderindentown"><div class="radio" style="margin:0%" data-toggle="tooltip" data-placement="top" title="
+									   Mr. Powell: <u><em>I will speak to some of my research colleagues and get back to you.</u></em> (you believe Powell doesn't know)"><label><input id="rCantAnswerSincere4" name="rCantAnswer4" required="required" type="radio" value="cant-answer-sincere"/><spansq>you believe they're sincere</spansq></label></div></td>		
+							</tr>
+							<tr id="overans1_q4" style="display: none">
+								<th class="lbordertopspace" bgcolor="#f0f5f5">Witness provides extra info?</th>
+							</tr>
+							<tr id="overans2_q4" style="display: none">
+								<td class="lborderindentown"><div class="radio" style="margin:0%" data-toggle="tooltip" data-placement="top" title="You believe the witness provides extra information not asked for or expected by the politician."><label><input id="rOveransYes4" name="rOverans4" onchange="toggleEnable('rOverans4', ['rOveransSway4', 'rOveransHelp4'], ['textOveransSway4', 'textOveransHelp4'])" required="required" type="radio" value="overansYes" /><spansq>yes</spansq></label></div></td>
+							</tr>
+							<tr id="overans3_q4" style="display: none">
+								<td class="lborderdoubleindent"><div class="radio" style="margin:0%" data-toggle="tooltip" data-placement="top" title="Q: Did you ever disclose this issue on a 10-K filing?</br>
+								   Mr. Stumpf: <u><em><du>All of our K or Q filings are facts and circumstances, what we knew at the time</du>. And as recently as our second-quarter Q this year, when we use our disclosure teams and our compliance teams to look at this issue, the facts and circumstances, we believed, were not material.</u></em> (you believe Stumpf answers no, but also includes other information to give himself the benefit of the doubt, a way out)"><label><input id="rOveransSway4" name="rIntentOverans4" required="required" type="radio" value="overans-sway" disabled="disabled"/><spansqueeze id="textOveransSway4">to sway opinion in their favor</spansqueeze></label></div></td>
+							</tr>
+							<tr id="overans4_q4" style="display: none">
+								<td class="lborderdoubleindent"><div class="radio" style="margin:0%" data-toggle="tooltip" data-placement="top" title="Q: Does that increased credit risk in the loan market pose systemic vulnerabilities?</br>
+								  Mr. Powell: <em><u>We don't believe it poses systemic kinds of risks, but we do think it poses a macroeconomic risk, particularly in the event of an economic downturn. <du>These are companies that have borrowed in good times and borrowed high amounts of debt. And if there is a downturn, they will be less able to carry out their roles in the economy and that may have an amplification effect on a downturn.</du></u></em> (you believe Powell answers the question, then adds helpful and critical details to understand his answer)"><label><input id="rOveransHelp4" name="rIntentOverans4" required="required" type="radio" value="overans-helpful" disabled="disabled"/><spansqueeze id="textOveransHelp4">to be helpful or add critical details</spansqueeze></label></div></td>	
+							</tr>
+							<tr id="overans5_q4" style="display: none">
+								<td class="lborderindentown"><div class="radio" style="margin:0%" data-toggle="tooltip" data-placement="top" title="You believe the witness does not provide extra unsolicited information."><label><input id="rOveransNo4" name="rOverans4" onchange="toggleEnable('rOverans4', ['rOveransSway4', 'rOveransHelp4'], ['textOveransSway4', 'textOveransHelp4'])" required="required" type="radio" value="overansNo" /><spansq>no</spansq></label></div></td>
+							</tr>
+						</tbody>
+					</table>
+				</td>
+			</tr>
+			<tr id="showNextTurn4" style="display: none;border-top: 15px solid #FFFFFF;">
+			<td><a href="javascript:void(0);" onclick="toggle('nextTurn4');">Show/Hide Next Turn</a></td>
+			</tr>
+				<tr id="nextTurn4" style="display: none">
+					<td><a href="javascript:void(0);" onclick="toggle('nextTurn4Spkr');">${next_turn4_speaker}</a>
+						<span id="nextTurn4Spkr" style="display: none">[${next_turn4_speaker_detail}]</span>: ${next_turn4_text}</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<div class="input-group"></br>Please briefly explain all your choices for <span style="background-color:#f0f5f5"><strong><em>Witness Intent</em></strong></span>:
+		<textarea class="form-control" name="explainIntent4" required="required" minlength="10" rows="1" cols="100"></textarea>
+	</div>
+	</div>
+	</div>
+
+	<div class="panel panel-success">
+	<div class="panel-heading"><strong>Question-Response 5 of 5</strong></div>
+
+	<div class="panel-body">
+	<table style="font-size: 1.0em;">
+		<tbody>
+			<tr id="showPrev5" style="display: none">
+				<td><a href="javascript:void(0);" onclick="toggle('prevTurn5');">Show/Hide Previous Turn</a></td>
+			</tr>
+			<tr id="prevTurn5" style="display: none; border-bottom: 15px solid #FFFFFF;">
+				<td><a href="javascript:void(0);" onclick="toggle('prevTurn5Spkr');">${prev_turn5_speaker}</a>
+						<span id="prevTurn5Spkr" style="display: none">[${prev_turn5_speaker_detail}]</span>: ${prev_turn5_text}</td>
+			</tr>
+			<tr>
+				<td rowspan="2" valign="top"><a href="javascript:void(0);" onclick="toggle('q5Spkr');">${q5_speaker}</a>
+					<span id="q5Spkr" style="display: none">[${q5_speaker_detail}]</span>: ${q5_text}
+				</td>
+				<th class="lbordernowrap" bgcolor="#fff4e6">How does the politician pose their question(s)?</th>
+			</tr>
+			<tr>
+				<td bgcolor="#fff4e6" class="lbordernowrap" valign="top">
+					<table>
+						<tbody>
+							<tr>
+								<td><a href="#" data-toggle="tooltip" data-placement="top" 
+									title="Q: <em><u>Would you just acknowledge that, yes</u></em>, Facebook is--<em><u>that is the business you are in</u></em>, gathering and aggregating that data? (you believe the politician is leading the witness to a 'yes' answer and makes an accusation that Facebook's main goal is to collect data)</br> Q: Do you think it would be reasonable for us to conclude that the President <em><u>by first interfering in one investigation and then interfering in an investigation into himself</em></u> committed obstruction of justice? (you believe the politician includes the controversial assumption that Trump interfered in investigations)" style="color: black;text-decoration:none;vertical-align:bottom;text-align:bottom;"><spansq>includes leading question, controversial assumption or attack?</spansq></a>
+								<label class="radio-inline"><input type="radio" onchange="toggleConditional('qLoad5', 'qFavor5', 'noLoad', ['qFavorYes5', 'qFavorNo5'])" name="qLoad5" id="qLoadYes5" value="yesLoad" required="required">yes</label>
+								<label class="radio-inline"><input type="radio" onchange="toggleConditional('qLoad5', 'qFavor5', 'noLoad',['qFavorYes5', 'qFavorNo5'])" name="qLoad5" id="qLoadNo5" value="noLoad" required="required">no</label>
+								</td>
+							</tr>
+							<tr id="qFavor5" style="display: none">
+								<td><a href="#" data-toggle="tooltip" data-placement="top" title="Q (to Mark Zuckerberg, CEO of Facebook):  I had a lot of people complain about ads but it is something I am willing to accept in return for a <em><u>free and valuable service</u></em>. So <em><u>you are not unique in Silicon Valley in doing this type of targeted ads, are you?</u></em> (you believe the politician is favoring Zuckerberg and asking him an easy question that makes Facebook look good)" style="color: black;text-decoration:none;vertical-align:bottom; text-align:bottom;"><spansq>includes question or statement favoring the witness?</spansq></a>
+								<label class="radio-inline"><input type="radio" name="qFavor5" id="qFavorYes5" value="yesFavor" required="required">yes</label>
+								<label class="radio-inline"><input type="radio" name="qFavor5" id="qFavorNo5" value="noFavor" required="required">no</label>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</td>
+			</tr>
+			<tr style="border-top: 15px solid #FFFFFF;">
+				<td valign="top" rowspan="6"><a href="javascript:void(0);" onclick="toggle('r5Spkr');">${r5_speaker}</a>
+					<span id="r5Spkr" style="display: none">[${r5_speaker_detail}]</span>: ${r5_text}
+				<th class="lbordernowrap" bgcolor="#f0f5f5" valign="top">How does the witness respond?</th>
+			</tr>
+			<tr>
+				<td class="lborderindentown"><div class="radio" style="margin:0%" data-toggle="tooltip" data-placement="top" title="Q: One of many, but not the sole factor?</br>Mr. Powell: <em><u>No. It is simply one of many.</em></u> (you believe Powell directly answers the question)</br></br>
+				Q: Can you elaborate on that?</br>
+				Mr. Powell: <u><em>So, before the financial crisis...</u></em> (you believe Powell indirectly answers the question)"><label><input id="rAns5" name="r5" onchange="toggleResponse(false, 5)" required="required" type="radio" value="answer" /><spansq>answers all reasonable questions</spansq></label></div></td>
+			</tr>
+			<tr>
+				<td class="lborderindentown"><div class="radio" style="margin:0%" data-toggle="tooltip" data-placement="top" title="Q: Do you recognize the gravity of your offenses? You are a lawyer, right?</br>
+				Mr. Cohen: <em><u>As of yesterday, I am no longer a lawyer. I have lost my law license, amongst other things.</em></u> (you believe Cohen doesn't answer the first question of whether he recognizes the gravity of his offenses)</br></br>
+				Q: Would Don Jr. or Mr. Weisselberg have more information?</br>
+				Mr. Cohen: <em><u>Mr. Weisselberg for sure, and Don Jr. would have cursory information.</em></u> (you believe Cohen doesn't answer the implied question 'What is the other information?', and instead only answers the literal question of whether or not they have information.)">
+				<label><input id="rPart5" name="r5" onchange="toggleResponse(false, 5)" required="required" type="radio" value="part-answer" /><spansq>answers partially or not all questions</spansq></label></div>
+			    </td>		
+			</tr>
+			<tr>
+				<td class="lborderindentown"><div class="radio" style="margin:0%" data-toggle="tooltip" data-placement="top" title="Q: I understand Facebook doesn't sell user data. Why wasn't explaining what Facebook does a higher priority?</br>
+				Mr. Zuckerberg: <em><u>Mr. Chairman, you are right that we don't sell any data, and I would say that we do try to explain what we do as time goes on. It is a broad system.</em></u> (you believe Zuckerberg doesn't answer the question of 'why it wasn't a higher priority' and instead shifts the question to: Do you sell user data? Do you explain this?)"><label><input id="rShift5" name="r5" onchange="toggleResponse(false, 5)" required="required" type="radio" value="shift" /><spansq>answers a different question</spansq></label></div></td>
+			</tr>
+			<tr>
+				<td class="lborderindentownwrap"><div class="radio" style="margin:0%" data-toggle="tooltip" data-placement="top" title="Mr. Powell: <em><u>I will speak to some of my research colleagues and get back to you.</u></em></span> (Powell says he doesn't know)</br></br>
+				
+				Attorney Sessions: <em><u>You're referring to my testimony at confirmation?</em></u> (Sessions asks for clarification)"><label><input id="rCantAnswer5" name="r5" onchange="toggleResponse(false, 5)" required="required" type="radio" value="cant-answer" /><spansq>says they don't understand/don't know/can't answer or asks a clarification question</spansq></label></div></td>
+			</tr>
+			<tr>
+				<td valign="top">
+					<table style="font-size: 1.0em;">
+						<tbody>
+							<tr id="part1_q5" style="display: none">
+								<th class="lbordertopspace" bgcolor="#f0f5f5">Witness intent for giving a partial answer?</th>
+							</tr>
+							<tr id="part2_q5" style="display: none">
+								<td class="lborderindentownwrap"><div class="radio" style="margin:0%" data-toggle="tooltip" data-placement="top" title="Q: Do you recognize the gravity of your offenses? You are a lawyer, right?</br>
+								Mr. Cohen: <em><u>As of yesterday, I am no longer a lawyer. I have lost my law license, amongst other things.</em></u> (you believe Cohen dodges the first question because it is unfavorable)"><label><input id="rPartDodge5" name="rPart5"  required="required" type="radio" value="part-dodge"/><spansq>to dodge an unfavorable question or question part</spansq></label></div></td>
+							</tr>	
+							<tr id="part3_q5" style="display: none">
+								<td class="lborderindentown"><div class="radio" style="margin:0%" data-toggle="tooltip" data-placement="top" title="Q: Do you recognize the gravity of your offenses? You are a lawyer, right?</br>
+								Mr. Cohen: <em><u>As of yesterday, I am no longer a lawyer. I have lost my law license, amongst other things.</em></u> (you believe the first question is rhetorical and so don't expect Cohen to answer it)"><label><input id="rPartCorrect5" name="rPart5" required="required" type="radio" value="part-ok"/><spansq>for a justified reason</spansq></label></div></td>
+							</tr>
+							<tr id="shift1_q5" style="display: none">
+								<th class="lbordertopspace" bgcolor="#f0f5f5">Witness intent for answering a different question?</th>
+							</tr>
+							<tr id="shift2_q5" style="display: none">
+								<td class="lborderindentownwrap"><div class="radio" style="margin:0%" data-toggle="tooltip" data-placement="top" title="Q: I understand that Facebook does not sell user data. Why wasn't explaining what Facebook does with users' data higher priority for you as a cofounder and now as CEO?</br>
+										Mr. Zuckerberg: <em><u>Mr. Chairman, you are right that we don't sell any data, and I would say that we do try to explain what we do as time goes on. It is a broad system.</u></em> (you believe Zuckerberg doesn't answer the question of <u>why explaining wasn't a higher priority</u>; he instead shifts the question to: Do you sell user data? Do you explain this?)"><label><input id="rShiftDodge5" name="rShift5"  required="required" type="radio" value="shift-dodge"/><spansq>to reformulate or evade an unfavorable question</spansq></label></div></td>
+							</tr>	
+							<tr id="shift3_q5" style="display: none">
+								<td class="lborderindentownwrap"><div class="radio" style="margin:0%" data-toggle="tooltip" data-placement="top" title="Q: When her hard drive failed, if you were properly backing up all the information required under the Federal Records Act, you would've had all those emails in your backup, wouldn't you?
+										</br>Mr. Koskinen: <em><u>All emails are not official records under any official records act. Only emails are saved that reflect agency actions.</em></u> (you believe Koskinen doesn't answer the question <u>would you have the emails?</u> because he instead corrects the politician's assumption about what actually gets backed up.)"><label><input id="rShiftCorrect5" name="rShift5" required="required" type="radio" value="shift-correct"/><spansq>to correct the questioner or other justified reason</spansq></label></div></td>
+							</tr>
+							<tr id="cant1_q5" style="display: none">
+								<th class="lbordertopspace" bgcolor="#f0f5f5">Witness intent for saying they can't answer?</th>
+							</tr>
+							<tr id="cant2_q5" style="display: none">
+								<td class="lborderindentown"><div class="radio" style="margin:0%" data-toggle="tooltip" data-placement="top" title="Q: Have you contacted anybody in the administration to advocate on your behalf?</br>
+									   Mr. Cohen: <em><u>I don't know what you are referring to, sir.</u></em> (you believe Cohen knows, but stalls for time)"><label><input id="rCantAnswerLying5" name="rCantAnswer5" required="required" type="radio" value="cant-answer-lying"/><spansq>you believe they're lying</spansq></label></div></td>
+							</tr>
+							<tr id="cant3_q5" style="display: none">
+								<td class="lborderindentown"><div class="radio" style="margin:0%" data-toggle="tooltip" data-placement="top" title="
+									   Mr. Powell: <u><em>I will speak to some of my research colleagues and get back to you.</u></em> (you believe Powell doesn't know)"><label><input id="rCantAnswerSincere5" name="rCantAnswer5" required="required" type="radio" value="cant-answer-sincere"/><spansq>you believe they're sincere</spansq></label></div></td>		
+							</tr>
+							<tr id="overans1_q5" style="display: none">
+								<th class="lbordertopspace" bgcolor="#f0f5f5">Witness provides extra info?</th>
+							</tr>
+							<tr id="overans2_q5" style="display: none">
+								<td class="lborderindentown"><div class="radio" style="margin:0%" data-toggle="tooltip" data-placement="top" title="You believe the witness provides extra information not asked for or expected by the politician."><label><input id="rOveransYes5" name="rOverans5" onchange="toggleEnable('rOverans5', ['rOveransSway5', 'rOveransHelp5'], ['textOveransSway5', 'textOveransHelp5'])" required="required" type="radio" value="overansYes" /><spansq>yes</spansq></label></div></td>
+							</tr>
+							<tr id="overans3_q5" style="display: none">
+								<td class="lborderdoubleindent"><div class="radio" style="margin:0%" data-toggle="tooltip" data-placement="top" title="Q: Did you ever disclose this issue on a 10-K filing?</br>
+								   Mr. Stumpf: <u><em><du>All of our K or Q filings are facts and circumstances, what we knew at the time</du>. And as recently as our second-quarter Q this year, when we use our disclosure teams and our compliance teams to look at this issue, the facts and circumstances, we believed, were not material.</u></em> (you believe Stumpf answers no, but also includes other information to give himself the benefit of the doubt, a way out)"><label><input id="rOveransSway5" name="rIntentOverans5" required="required" type="radio" value="overans-sway" disabled="disabled"/><spansqueeze id="textOveransSway5">to sway opinion in their favor</spansqueeze></label></div></td>
+							</tr>
+							<tr id="overans4_q5" style="display: none">
+								<td class="lborderdoubleindent"><div class="radio" style="margin:0%" data-toggle="tooltip" data-placement="top" title="Q: Does that increased credit risk in the loan market pose systemic vulnerabilities?</br>
+								  Mr. Powell: <em><u>We don't believe it poses systemic kinds of risks, but we do think it poses a macroeconomic risk, particularly in the event of an economic downturn. <du>These are companies that have borrowed in good times and borrowed high amounts of debt. And if there is a downturn, they will be less able to carry out their roles in the economy and that may have an amplification effect on a downturn.</du></u></em> (you believe Powell answers the question, then adds helpful and critical details to understand his answer)"><label><input id="rOveransHelp5" name="rIntentOverans5" required="required" type="radio" value="overans-helpful" disabled="disabled"/><spansqueeze id="textOveransHelp5">to be helpful or add critical details</spansqueeze></label></div></td>	
+							</tr>
+							<tr id="overans5_q5" style="display: none">
+								<td class="lborderindentown"><div class="radio" style="margin:0%" data-toggle="tooltip" data-placement="top" title="You believe the witness does not provide extra unsolicited information."><label><input id="rOveransNo5" name="rOverans5" onchange="toggleEnable('rOverans5', ['rOveransSway5', 'rOveransHelp5'], ['textOveransSway5', 'textOveransHelp5'])" required="required" type="radio" value="overansNo" /><spansq>no</spansq></label></div></td>
+							</tr>
+						</tbody>
+					</table>
+				</td>
+			</tr>
+			<tr id="showNextTurn5" style="display: none;border-top: 15px solid #FFFFFF;">
+			<td><a href="javascript:void(0);" onclick="toggle('nextTurn5');">Show/Hide Next Turn</a></td>
+			</tr>
+				<tr id="nextTurn5" style="display: none">
+					<td><a href="javascript:void(0);" onclick="toggle('nextTurn5Spkr');">${next_turn5_speaker}</a>
+						<span id="nextTurn5Spkr" style="display: none">[${next_turn5_speaker_detail}]</span>: ${next_turn5_text}</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<div class="input-group"></br>Please briefly explain all your choices for <span style="background-color:#f0f5f5"><strong><em>Witness Intent</em></strong></span>:
+		<textarea class="form-control" name="explainIntent5" required="required" minlength="10" rows="1" cols="100"></textarea>
+	</div>
+	</div>
+	</div>
+
+
+</div>
+</div>
+
+
+<div class="panel panel-primary">
+<div class="panel-heading"><strong>Sentiment towards questioners and witness</strong></div>
+
+<div class="panel-body">
+<p>In this congressional hearing:</p>
+<ol>
+<li>What is your overall sentiment towards the <strong><em>questioners</em></strong> (the congressional members asking the questions)?</br>
+<label class="radio-inline"><input type="radio" name="sentimentQuestioner" value="veryNegative" required="required">Very Negative</label>
+<label class="radio-inline"><input type="radio" name="sentimentQuestioner" value="negative" required="required">Negative</label>
+<label class="radio-inline"><input type="radio" name="sentimentQuestioner" value="somewhatNegative" required="required">Somewhat Negative</label>
+<label class="radio-inline"><input type="radio" name="sentimentQuestioner" value="neutral" required="required">Neutral</label>
+<label class="radio-inline"><input type="radio" name="sentimentQuestioner" value="somewhatPositive" required="required">Somewhat Positive</label>
+<label class="radio-inline"><input type="radio" name="sentimentQuestioner" value="positive" required="required">Positive</label>
+<label class="radio-inline"><input type="radio" name="sentimentQuestioner" value="veryPositive" required="required">Very Positive</label>
+</li>
+<li>What is your overall sentiment towards the <strong><em>witness</em></strong>?</br>
+<label class="radio-inline"><input type="radio" name="sentimentWitness" value="veryNegative" required="required">Very Negative</label>
+<label class="radio-inline"><input type="radio" name="sentimentWitness" value="negative" required="required">Negative</label>
+<label class="radio-inline"><input type="radio" name="sentimentWitness" value="somewhatNegative" required="required">Somewhat Negative</label>
+<label class="radio-inline"><input type="radio" name="sentimentWitness" value="neutral" required="required">Neutral</label>
+<label class="radio-inline"><input type="radio" name="sentimentWitness" value="somewhatPositive" required="required">Somewhat Positive</label>
+<label class="radio-inline"><input type="radio" name="sentimentWitness" value="positive" required="required">Positive</label>
+<label class="radio-inline"><input type="radio" name="sentimentWitness" value="veryPositive" required="required">Very Positive</label>
+</li>
+</ol>
+</div>
+</div>
+</section>
+</div>
+</section>
+
+<script type='text/javascript' src='https://s3.amazonaws.com/mturk-public/externalHIT_v1.js'></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.11.0/jquery-ui.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script>
+$(document).ready(function(){
+  $('[data-toggle="tooltip"]').tooltip({
+  	html: true,
+  	delay: { "show": 900, "hide": 100 }
+  });   
+});
+</script>
+<script type="text/javascript">
+function toggleResponse(opposing, num) {
+	var responseName = "r";
+	var question = "_q";
+	if (opposing == true) {
+		responseName = responseName + "Opp";
+		question = question + "Opp";
+	}
+	responseNameNum = responseName + num;
+	question = question + num;
+
+	var overanss = ["overans1"+question, "overans2"+question, "overans3"+question, "overans4"+question, "overans5"+question];
+	var overansName = responseName+"Overans"+num;
+	var overansChildRadios = [responseName+"OveransSway"+num, responseName+"OveransHelp"+num];
+	var overansParentRadios = [responseName+"OveransYes"+num, responseName+"OveransNo"+num];
+	var overansTexts = ["textOveransSway"+num, "textOveransHelp"+num];
+	var parts = ["part1"+question, "part2"+question, "part3"+question];
+	var partRadios = [responseName+"PartDodge"+num, responseName+"PartCorrect"+num];
+	var shifts = ["shift1"+question,"shift2"+question, "shift3"+question];
+	var shiftRadios = [responseName+"ShiftDodge"+num, responseName+"ShiftCorrect"+num];
+	var cants = ["cant1"+question, "cant2"+question, "cant3"+question];
+	var cantRadios = [responseName+"CantAnswerLying"+num, responseName+"CantAnswerSincere"+num];
+	
+	var result = document.querySelector('input[name="'+responseNameNum+'"]:checked').value;
+    if(result=="answer"){
+    	show(overanss);
+    	require(overansParentRadios);
+    	toggleEnable(overansName, overansChildRadios, overansTexts);
+    	hide(parts);
+    	optional(partRadios);
+    	hide(shifts);
+    	optional(shiftRadios);
+    	hide(cants);
+    	optional(cantRadios);
+    }
+    else if(result=="part-answer"){
+    	show(overanss);
+    	require(overansParentRadios);
+    	toggleEnable(overansName, overansChildRadios, overansTexts);
+    	show(parts);
+    	require(partRadios);
+    	hide(shifts);
+    	optional(shiftRadios);
+    	hide(cants);
+    	optional(cantRadios);
+    }
+    else if(result=="shift"){
+    	optional(overansParentRadios);
+    	optional(overansChildRadios);
+    	hide(overanss);
+    	hide(parts);
+    	optional(partRadios);
+    	show(shifts);
+    	require(shiftRadios);
+    	hide(cants);
+    	optional(cantRadios);
+    }
+    else if(result=="cant-answer"){
+    	show(overanss);
+    	require(overansParentRadios);
+    	toggleEnable(overansName, overansChildRadios, overansTexts);
+    	hide(parts);
+    	optional(partRadios);
+    	hide(shifts);
+    	optional(shiftRadios);
+    	show(cants);
+    	require(cantRadios);
+    }
+    
+}
+
+function require(divNames) {
+  divNamesLength = divNames.length;
+  for (i=0; i<divNamesLength; i++){
+  	var x = document.getElementById(divNames[i]);
+  	x.setAttribute('required', 'required');
+  }
+}
+
+function optional(divNames) {
+  divNamesLength = divNames.length;
+  for (i=0; i<divNamesLength; i++){
+  	var x = document.getElementById(divNames[i]);
+  	x.removeAttribute('required');
+  }
+}
+
+function show(divNames) {
+  divNamesLength = divNames.length;
+  for (i=0; i<divNamesLength; i++){
+  	var x = document.getElementById(divNames[i]);
+  	x.style.display = "";
+  } 
+}
+
+function hide(divNames) {
+  divNamesLength = divNames.length;
+  for (i=0; i<divNamesLength; i++){
+	  var x = document.getElementById(divNames[i]);
+	  x.style.display = "none";
+  }
+}
+
+function toggle(divName) {
+  var x = document.getElementById(divName);
+  if (x.style.display === "none") {
+    x.style.display = "";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function toggleConditional(conditionalName, toggleId, showValue, radioIds) {
+	var conditionalValue = document.querySelector('input[name="'+conditionalName+'"]:checked').value;
+	var toggle = document.getElementById(toggleId);
+	var radioLength = radioIds.length;
+	if (conditionalValue == showValue) {
+		toggle.style.display = "";
+		for (i=0; i<radioLength; i++) {
+			var radio = document.getElementById(radioIds[i]);
+			radio.setAttribute('required', 'required');
+		}
+	}
+	else {
+		toggle.style.display = "none";
+		for (i=0; i<radioLength; i++) {
+			var radio = document.getElementById(radioIds[i]);
+			radio.removeAttribute('required');
+		}
+	}
+}
+
+function toggleEnable(parentName, childIds, childTextIds){
+	childLength = childIds.length;
+	var parentChecked = document.querySelector('input[name="'+parentName+'"]:checked');
+	if (parentChecked != null) {
+		var parentValue = parentChecked.value;
+		if (parentValue == "overansYes") {
+			for (i=0; i<childLength; i++) {
+				var child = document.getElementById(childIds[i]);
+				var childText = document.getElementById(childTextIds[i]);
+				child.removeAttribute('disabled');
+				child.setAttribute('required', 'required');
+				childText.style.color = 'black';
+			}
+
+		}
+		else {
+			for (i=0; i<childLength; i++) {
+				var child = document.getElementById(childIds[i]);
+				var childText = document.getElementById(childTextIds[i]);
+				child.setAttribute('disabled', true);
+				child.removeAttribute('required');
+				childText.style.color = '#D3D3D3';
+			}
+		}
+	}
+}
+function populateTurns(turn1_id, turn2_id, turn3_id, turn4_id, turn5_id) {
+	populateTurn(0, turn1_id, turn2_id, 1)
+	populateTurn(turn1_id, turn2_id, turn3_id, 2)
+	populateTurn(turn2_id, turn3_id, turn4_id, 3)
+	populateTurn(turn3_id, turn4_id, turn5_id, 4)
+	populateTurn(turn4_id, turn5_id, turn5_id+3 , 5)
+}
+
+function populateTurn(prevTurn, currTurn, nextTurn, turnNum) {
+	prevElement = 'showPrev' + turnNum
+	nextElement = 'showNextTurn' + turnNum
+	if (currTurn - prevTurn > 2) {
+		var x = document.getElementById(prevElement);
+		x.style.display = "";
+	}
+	if (nextTurn - currTurn > 2) {
+		var x = document.getElementById(nextElement);
+		x.style.display = "";
+	}
+}
+	 
+populateTurns(${turn1_id}, ${turn2_id}, ${turn3_id}, ${turn4_id}, ${turn5_id});
+</script>
+</crowd-form>
+</body>
+</html>
