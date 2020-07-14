@@ -6,3 +6,11 @@ __pycache__
 *.swp
 *.pt
 results/
+ dialogTaxonomy.key
+lmi_pmi_explanation.tar.gz
+lmi_pmi_question.tar.gz
+data/analyses/lmi_pmi_explanation
+data/analyses/lmi_pmi_question
+data/analyses/lmi_pmi_response
+private_code
+private_data
