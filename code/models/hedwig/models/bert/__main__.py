@@ -15,22 +15,15 @@ from transformers import (
 from common.constants import *
 from common.evaluators.bert_evaluator import BertEvaluator
 from common.trainers.bert_trainer import BertTrainer
-from datasets.bert_processors.aapd_processor import AAPDProcessor
-from datasets.bert_processors.agnews_processor import AGNewsProcessor
-from datasets.bert_processors.imdb_processor import IMDBProcessor
-from datasets.bert_processors.reuters_processor import ReutersProcessor
 from datasets.bert_processors.congressional_hearing_processor import CongressionalHearingProcessor
 from datasets.bert_processors.congressional_hearing_binary_processor import CongressionalHearingBinaryProcessor
-from datasets.bert_processors.sogou_processor import SogouProcessor
-from datasets.bert_processors.sst_processor import SST2Processor
-from datasets.bert_processors.yelp2014_processor import Yelp2014Processor
 from models.bert.args import get_args
-from models.bert.ordinal_model import OrdinalLogisticModel
-    
+
+
 def evaluate_split(model, processor, tokenizer, args, save_file, split='dev'):
     evaluator = BertEvaluator(model, processor, tokenizer, args, split)
     scores, score_names = evaluator.get_scores(silent=True)
-    if args.task == TASK_REGRESSION or args.task == TASK_ORDINAL:
+    if args.task == TASK_REGRESSION:
         rmse, kendall, pearson, spearman, pearson_spearman, avg_loss = scores[:6]
         print('\n' + LOG_HEADER_REG)
         print(LOG_TEMPLATE_REG.format(split.upper(), rmse, kendall, pearson, spearman, pearson_spearman, avg_loss))
@@ -64,15 +57,8 @@ def run_main(args):
     metrics_test_json = args.metrics_json + '_test'
 
     dataset_map = {
-        'SST-2': SST2Processor,
-        'Reuters': ReutersProcessor,
         'CongressionalHearing': CongressionalHearingProcessor,
-        'CongressionalHearingBinary': CongressionalHearingBinaryProcessor,
-        'IMDB': IMDBProcessor,
-        'AAPD': AAPDProcessor,
-        'AGNews': AGNewsProcessor,
-        'Yelp2014': Yelp2014Processor,
-        'Sogou': SogouProcessor
+        'CongressionalHearingBinary': CongressionalHearingBinaryProcessor
     }
 
     model_map = {
@@ -101,12 +87,14 @@ def run_main(args):
     args.batch_size = args.batch_size // args.gradient_accumulation_steps
     args.device = device
     args.n_gpu = n_gpu
-    if args.task == REGRESSION or args.task == ORDINAL:
+    if args.task == REGRESSION:
         args.num_labels = 1
         args.is_multilabel = False
+        args.is_regression = True
     else:
         args.num_labels = dataset_map[args.dataset].NUM_CLASSES
         args.is_multilabel = dataset_map[args.dataset].IS_MULTILABEL
+        args.is_regression = False
     args.is_hierarchical = False
 
     processor = dataset_map[args.dataset](args)
@@ -138,9 +126,6 @@ def run_main(args):
         model.roberta.embeddings.token_type_embeddings = torch.nn.Embedding(2, single_emb.embedding_dim)
         model.roberta.embeddings.token_type_embeddings.weight = torch.nn.Parameter(single_emb.weight.repeat([2, 1]))
 
-    # wrap model in ordinal model
-    if args.task == TASK_ORDINAL:
-        model = OrdinalLogisticModel(model, 7) # num of ordinal classes
     if args.fp16:
         model.half()
     model.to(device)

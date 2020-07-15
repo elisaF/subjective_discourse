@@ -1,7 +1,0 @@
-nltk
-numpy
-Cython
-scikit-learn
-scipy
-torchtext
-transformers

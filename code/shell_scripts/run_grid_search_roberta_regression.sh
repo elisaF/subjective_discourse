@@ -8,7 +8,7 @@ do
         do
             for batch_size in 8
             do
-            python -u -m models.bert --dataset CongressionalHearing --model-family roberta --model roberta-base --max-seq-length 512 --evaluate-dev --patience 5 --lr ${lr} --warmup-proportion ${warmup}  --weight-decay ${decay}  --batch-size ${batch_size} --epochs 30 --seed 1234 --is-regression --label-column 26 --evaluate-train --eval-metric PEARSON_SPEARMAN --metrics-json metrics_roberta_norm_pearson_spearman_pat5_lr${lr}_warmup${warmup}_decay${decay}_batch${batch_size}_1.json > ch_roberta_norm_pearson_spearman_pat5_lr${lr}_warmup${warmup}_decay${decay}_batch${batch_size}_1.log 2>&1
+            python -u -m models.bert --dataset CongressionalHearing --model-family roberta --model roberta-base --max-seq-length 512 --evaluate-dev --patience 5 --lr ${lr} --warmup-proportion ${warmup}  --weight-decay ${decay}  --batch-size ${batch_size} --epochs 30 --seed 1234 --task regression --label-column 26 --evaluate-train --eval-metric PEARSON_SPEARMAN --metrics-json metrics_roberta_norm_pearson_spearman_pat5_lr${lr}_warmup${warmup}_decay${decay}_batch${batch_size}_1.json > ch_roberta_norm_pearson_spearman_pat5_lr${lr}_warmup${warmup}_decay${decay}_batch${batch_size}_1.log 2>&1
             done
         done
     done
