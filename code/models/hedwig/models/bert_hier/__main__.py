@@ -94,7 +94,7 @@ def run_main(args):
     args.batch_size = args.batch_size // args.gradient_accumulation_steps
     args.device = device
     args.n_gpu = n_gpu
-    if args.task == REGRESSION:
+    if args.task == TASK_REGRESSION:
         args.num_labels = 1
         args.is_multilabel = False
         args.is_regression = True
