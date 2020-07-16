@@ -1,9 +1,9 @@
 #!/bin/bash
-expnames=(resp quest last_quest)
+expnames=(r_text)
 declare -A column=(
-  [resp]=2
-  [quest]=3
-  [last_quest]=4
+  [r_text]=2
+  [q_text]=3
+  [q_text_last_question]=4
 )
 
 for expname in "${expnames[@]}"; do
