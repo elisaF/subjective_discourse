@@ -9,6 +9,31 @@ Ferracane, Elisa TBD
 If you're here just for the data, you can download 
 
 ## Code
+### Setup:
+First, create a conda environment and activate it:
+```
+conda create --name subjective python=3.6
+conda activate subjective
+```
+
+Install pytorch and cuda:
+```
+conda install pytorch==1.2.0 torchvision==0.4.0 cudatoolkit=10.0 -c pytorch
+```
+
+Clone this repo and install the requirements:
+```
+git clone https://github.com/elisaF/subjective_discourse
+cd subjective_discourse
+pip install -r requirements.txt
+```
+
+Unpack the data splits:
+```
+cd subjective_discourse/data/gold
+tar -zxvf gold_cv_dev_data.tar.gz
+```
+
 ### Classification Task:
 The multi-label classification task consists of predicting all the possible response labels, and is evaluated with macro-averaged F1.
 
