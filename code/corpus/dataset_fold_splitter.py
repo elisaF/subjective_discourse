@@ -49,6 +49,7 @@ def split_data(input_file, output_dir, seed, n_folds):
 
     # shuffle rows of dataframe
     df = df.sample(frac=1, random_state=seed).reset_index(drop=True)
+    df = df.sample(frac=1, random_state=seed).reset_index(drop=True)
 
     # get group indeces
     hearing_to_num = {}
