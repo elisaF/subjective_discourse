@@ -38,7 +38,7 @@ def get_args():
     parser.add_argument('--seed', type=int, default=3435)
     parser.add_argument('--n_folds', type=int, default=5)
     parser.add_argument('--input_file', default=None)
-    parser.add_argument('--output_dir', default=os.path.join(os.pardir, 'hedwig-data', 'datasets','CongressionalHearing','folds'))
+    parser.add_argument('--output_dir', default=os.path.join(os.pardir, os.pardir, 'data', 'gold'))
 
     args = parser.parse_args()
     return args
@@ -47,9 +47,9 @@ def get_args():
 def split_data(input_file, output_dir, seed, n_folds):
     df = pd.read_csv(input_file, sep='\t', dtype=str)
 
-    # shuffle rows of dataframe
-    df = df.sample(frac=1, random_state=seed).reset_index(drop=True)
-    df = df.sample(frac=1, random_state=seed).reset_index(drop=True)
+    # shuffle rows of dataframe several times
+    for _ in range(5):
+        df = df.sample(frac=1, random_state=seed).reset_index(drop=True)
 
     # get group indeces
     hearing_to_num = {}
