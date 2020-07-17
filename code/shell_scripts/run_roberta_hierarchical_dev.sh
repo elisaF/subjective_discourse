@@ -6,7 +6,7 @@ declare -A column=(
   [last_quest]=4
 )
 count=1
- for seed in 1234 5678 9012
+ for seed in 1234 9012 3456
  do
     echo ${count}
     for expname in "${expnames[@]}"; do
