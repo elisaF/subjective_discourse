@@ -78,4 +78,4 @@ if __name__ == '__main__':
     process_json_results(args.json_dir, args.save_file, args.split, args.label_suffix)
 
 
-# python -m models.process_results --json_dir /Users/elisa/Documents/CompLing/congressional_hearing/results/roberta_question/ --save_file /Users/elisa/Documents/CompLing/congressional_hearing/results/roberta_question/roberta_question_summary.tsv
+# python -m analyses.process_results --json_dir /Users/elisa/Documents/CompLing/congressional_hearing/results/roberta_question/ --save_file /Users/elisa/Documents/CompLing/congressional_hearing/results/roberta_question/roberta_question_summary.tsv
