@@ -9,22 +9,8 @@ from sklearn.model_selection import GroupKFold
 COLUMN_NAMES = ['qa_index_digits', 'gold_labels_binary', 'r_text', 'q_text', 'q_text_last_question',
                 'gold_sentiments', 'gold_q_sentiments', 'gold_workers', 'gold_q_intents', 'hit_order',  # 5
                 'q_speaker_role', 'r_speaker_role', 'gold_q_intents_num', 'q_speaker_party', #10
-                # high >0.34
-                #'r_feature_politeness_==Apologizing==', 'r_feature_politeness_==1st_person_pl.==',  # 10
-                # medium 0.27 < x < 0.35
-                    'gold_sentiments_num', 'gold_q_sentiments_num', 'gold_sentiments_coarse_num',  # 14
-                #'r_has_adverb', 'r_has_named_entity', 'r_feature_politeness_==Direct_start==',  # 15
+                'gold_sentiments_num', 'gold_q_sentiments_num', 'gold_sentiments_coarse_num',  # 14
                 'q_speaker',  # 17
-                # low correlation 0.13 < x < 0.27
-                #'q_has_adjective', 'q_feature_politeness_==1st_person_pl.==',  # 19
-                #'q_feature_politeness_==HASNEGATIVE==',  # 21
-                #'r_has_adjective', 'r_has_cardinal_num', 'r_has_modal', 'r_question_lexicon',  # 23
-                #'r_feature_politeness_==Please_start==', 'r_feature_politeness_==HASHEDGE==',  # 27
-                #'r_feature_politeness_==Hedges==', 'r_feature_politeness_==Factuality==',  # 29
-                #'r_feature_politeness_==Gratitude==', 'r_feature_politeness_==1st_person==',  # 31
-                #'r_feature_politeness_==1st_person_start==', 'r_feature_politeness_==2nd_person==',  # 33
-                #'r_feature_politeness_==2nd_person_start==', 'r_feature_politeness_==HASPOSITIVE==',  # 35
-                #'r_feature_politeness_==HASNEGATIVE==', 'r_feature_politeness_==SUBJUNCTIVE==',  # 37
                 'gold_sentiments_binary', 'gold_q_sentiments_count', 'gold_sentiments_coarse_count',  # 18
                 'gold_sentiments_coarse_binary',  # 21
                 'gold_q_sentiments_coarse_count', 'gold_q_sentiments_coarse_num', 'gold_q_sentiments_coarse_binary',  # 22
