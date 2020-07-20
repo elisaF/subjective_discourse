@@ -15,7 +15,8 @@ COLUMN_NAMES = ['qa_index_digits', 'gold_labels_binary', 'r_text', 'q_text', 'q_
                 'gold_sentiments_coarse_binary',  # 21
                 'gold_q_sentiments_coarse_count', 'gold_q_sentiments_coarse_num', 'gold_q_sentiments_coarse_binary',  # 22
                 'entropy', 'entropy_norm', 'entropy_norm_buckets', 'entropy_binarized', 'question_type_num',  # 25
-                'q_text_all_questions', 'gold_label_powerset', 'gold_label_powerset_binary']  # 'mace_entropy']  # 30
+                'q_text_all_questions', 'gold_label_powerset', 'gold_label_powerset_binary', # 30
+                'q_text_last_2_sents', 'q_text_last_3_sents']  # 'mace_entropy']  #33
 
 
 def get_args():
