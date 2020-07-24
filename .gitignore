@@ -15,3 +15,5 @@ data/analyses/lmi_pmi_response
 private_code
 private_data
 data/gold/gold_cv_dev_data/CongressionalHearing
+data/gold/gold_cv_dev_data
+data/gold/gold_full_data
