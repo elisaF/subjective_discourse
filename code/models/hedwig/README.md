@@ -12,7 +12,7 @@ Each model directory has a `README.md` with further details.
 
 ## Additional setup
 
-We assume you've already performed the main setup steps as documented [here](README.md). The following additional steps are required to run the baselines:
+We assume you've already performed the main setup steps as documented [here](../../../README.md). The following additional steps are required to run the baselines:
 
 Activate your previously created environment:
 ```bash
@@ -38,5 +38,3 @@ cd subjective_discourse/data
 git clone https://git.uwaterloo.ca/jimmylin/hedwig-data.git
 cd hedwig-data/embeddings/word2vec
 ```
-
-**If you are an internal Hedwig contributor using the machines in the lab, follow the instructions [here](docs/internal-instructions.md).**
