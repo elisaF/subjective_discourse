@@ -1,5 +1,4 @@
 from common.trainers.classification_trainer import ClassificationTrainer
-from common.trainers.relevance_transfer_trainer import RelevanceTransferTrainer
 
 
 class TrainerFactory(object):
@@ -7,14 +6,7 @@ class TrainerFactory(object):
     Get the corresponding Trainer class for a particular dataset.
     """
     trainer_map = {
-        'Reuters': ClassificationTrainer,
         'CongressionalHearing': ClassificationTrainer,
-        'AAPD': ClassificationTrainer,
-        'IMDB': ClassificationTrainer,
-        'Yelp2014': ClassificationTrainer,
-        'Robust04': RelevanceTransferTrainer,
-        'Robust05': RelevanceTransferTrainer,
-        'Robust45': RelevanceTransferTrainer,
     }
 
     @staticmethod
