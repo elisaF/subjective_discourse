@@ -6,7 +6,7 @@ import models.args
 def get_args():
     parser = models.args.get_args()
 
-    parser.add_argument('--dataset', type=str, default='Reuters', choices=['Reuters', 'CongressionalHearing', 'AAPD', 'IMDB', 'Yelp2014'])
+    parser.add_argument('--dataset', type=str, default='CongressionalHearing', choices=['CongressionalHearing'])
     parser.add_argument('--max-vocab-size', type=int, default=500000)
     parser.add_argument('--max-vocab-sizes', nargs='+', type=int,  
                         help='Vocab sizes for each fold when doing cross-validation')

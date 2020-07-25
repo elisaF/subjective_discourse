@@ -9,11 +9,7 @@ import torch.onnx
 
 from common.evaluate import EvaluatorFactory
 from common.train import TrainerFactory
-from datasets.aapd import AAPD
-from datasets.imdb import IMDB
-from datasets.reuters import ReutersBOW
 from datasets.congressional_hearing import CongressionalHearingBOW
-from datasets.yelp2014 import Yelp2014
 from models.fasttext.args import get_args
 from models.fasttext.model import FastText
 
@@ -73,11 +69,7 @@ def run_main(args):
         print('Warning: Using CPU for training')
 
     dataset_map = {
-        'Reuters': ReutersBOW,
         'CongressionalHearing': CongressionalHearingBOW,
-        'AAPD': AAPD,
-        'IMDB': IMDB,
-        'Yelp2014': Yelp2014
     }
 
     if args.dataset not in dataset_map:

@@ -9,11 +9,7 @@ import torch
 
 from common.evaluate import EvaluatorFactory
 from common.train import TrainerFactory
-from datasets.aapd import AAPD
-from datasets.imdb import IMDB
-from datasets.reuters import Reuters
 from datasets.congressional_hearing import CongressionalHearing
-from datasets.yelp2014 import Yelp2014
 from models.reg_lstm.args import get_args
 from models.reg_lstm.model import RegLSTM
 
@@ -84,11 +80,7 @@ def run_main(args):
         print('Warning: Using CPU for training')
 
     dataset_map = {
-        'Reuters': Reuters,
         'CongressionalHearing': CongressionalHearing,
-        'AAPD': AAPD,
-        'IMDB': IMDB,
-        'Yelp2014': Yelp2014
     }
 
     if args.dataset not in dataset_map:

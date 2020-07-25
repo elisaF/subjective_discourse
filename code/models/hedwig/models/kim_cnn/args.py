@@ -6,7 +6,7 @@ import models.args
 def get_args():
     parser = models.args.get_args()
 
-    parser.add_argument('--dataset', type=str, default='Reuters', choices=['Reuters', 'CongressionalHearing', 'AAPD', 'IMDB', 'Yelp2014'])
+    parser.add_argument('--dataset', type=str, default='CongressionalHearing', choices=['CongressionalHearing'])
     parser.add_argument('--mode', type=str, default='multichannel', choices=['rand', 'static', 'non-static', 'multichannel'])
     parser.add_argument('--output-channel', type=int, default=100)
     parser.add_argument('--words-dim', type=int, default=300)
@@ -15,7 +15,8 @@ def get_args():
     parser.add_argument('--epoch-decay', type=int, default=15)
     parser.add_argument('--weight-decay', type=float, default=0)
 
-    parser.add_argument('--word-vectors-dir', default=os.path.join(os.pardir, 'hedwig-data', 'embeddings', 'word2vec'))
+    parser.add_argument('--word-vectors-dir', default=os.path.join(os.pardir, os.pardir, os.pardir, 'hedwig-data',
+                                                                   'embeddings', 'word2vec'))
     parser.add_argument('--word-vectors-file', default='GoogleNews-vectors-negative300.txt')
     parser.add_argument('--save-path', type=str, default=os.path.join('model_checkpoints', 'kim_cnn'))
     parser.add_argument('--resume-snapshot', type=str)

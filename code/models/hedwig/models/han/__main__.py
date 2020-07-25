@@ -10,11 +10,7 @@ import torch.onnx
 
 from common.evaluate import EvaluatorFactory
 from common.train import TrainerFactory
-from datasets.aapd import AAPDHierarchical as AAPD
-from datasets.imdb import IMDBHierarchical as IMDB
-from datasets.reuters import ReutersHierarchical as Reuters
 from datasets.congressional_hearing import CongressionalHearingHierarchical as CongressionalHearing
-from datasets.yelp2014 import Yelp2014Hierarchical as Yelp2014
 from models.han.args import get_args
 from models.han.model import HAN
 
@@ -86,11 +82,7 @@ def run_main(args):
         print('Warning: Using CPU for training')
 
     dataset_map = {
-        'Reuters': Reuters,
         'CongressionalHearing': CongressionalHearing,
-        'AAPD': AAPD,
-        'IMDB': IMDB,
-        'Yelp2014': Yelp2014
     }
 
     if args.dataset not in dataset_map:
