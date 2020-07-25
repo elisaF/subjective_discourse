@@ -61,7 +61,7 @@ class BertTrainer(object):
             logits = self.model(input_ids=input_ids, attention_mask=input_mask, token_type_ids=segment_ids)[0]
 
             if self.args.is_multilabel:
-                predicted_labels.extend(F.sigmoid(logits).round().long().cpu().detach().numpy())
+                predicted_labels.extend(torch.sigmoid(logits).round().long().cpu().detach().numpy())
                 target_labels.extend(label_ids.cpu().detach().numpy())
                 if self.args.loss == 'cross-entropy':
                     if self.args.pos_weights:

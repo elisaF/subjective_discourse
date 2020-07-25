@@ -63,7 +63,7 @@ class BertHierarchicalEvaluator(object):
             with torch.no_grad():
                 logits_coarse, logits_fine = self.model(input_ids=input_ids, attention_mask=input_mask, token_type_ids=segment_ids)
 
-            preds_coarse = F.sigmoid(logits_coarse).round().long().cpu().detach().numpy()
+            preds_coarse = torch.sigmoid(logits_coarse).round().long().cpu().detach().numpy()
             predicted_labels_coarse.extend(preds_coarse)
             # get coarse labels from the fine labels
             label_ids_coarse = get_coarse_labels(label_ids_fine, self.args.num_coarse_labels,
@@ -72,7 +72,7 @@ class BertHierarchicalEvaluator(object):
             target_labels_coarse.extend(label_ids_coarse.cpu().detach().numpy())
 
             # mask fine predictions using coarse predictions
-            preds_fine = F.sigmoid(logits_fine).round().long().cpu().detach().numpy()
+            preds_fine = torch.sigmoid(logits_fine).round().long().cpu().detach().numpy()
             mask_fine = get_fine_mask(torch.Tensor(preds_coarse), self.args.parent_to_child_index_map)
             preds_fine[~mask_fine] = 0
             predicted_labels_fine.extend(preds_fine)
@@ -80,11 +80,11 @@ class BertHierarchicalEvaluator(object):
             target_labels_fine.extend(label_ids_fine.cpu().detach().numpy())
 
             if self.args.loss == 'cross-entropy':
-                criterion = torch.nn.BCEWithLogitsLoss(size_average=False)
+                criterion = torch.nn.BCEWithLogitsLoss(reduction='sum')
                 loss_fine = criterion(logits_fine.cpu(), label_ids_fine.float().cpu())
                 loss_coarse = criterion(logits_coarse.cpu(), label_ids_coarse.float().cpu())
             elif self.args.loss == 'mse':
-                criterion = torch.nn.MSELoss(size_average=False)
+                criterion = torch.nn.MSELoss(reduction='sum')
                 m = torch.nn.Sigmoid()
                 loss_fine = criterion(m(logits_fine.cpu()), label_ids_fine.float().cpu())
                 loss_coarse = criterion(m(logits_coarse.cpu()), label_ids_coarse.float().cpu())

@@ -48,7 +48,7 @@ class ClassificationTrainer(Trainer):
                     scores = self.model(batch.text[0], lengths=batch.text[1])
 
             if 'is_multilabel' in self.config and self.config['is_multilabel']:
-                predictions = F.sigmoid(scores).round().long()
+                predictions = torch.sigmoid(scores).round().long()
                 for tensor1, tensor2 in zip(predictions, batch.label):
                     if np.array_equal(tensor1, tensor2):
                         n_correct += 1

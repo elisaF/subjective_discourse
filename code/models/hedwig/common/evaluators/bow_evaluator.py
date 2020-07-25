@@ -49,9 +49,9 @@ class BagOfWordsEvaluator(object):
                 logits = logits.view(labels.size())
 
             if self.args.is_multilabel:
-                predicted_labels.extend(F.sigmoid(logits).round().long().cpu().detach().numpy())
+                predicted_labels.extend(torch.sigmoid(logits).round().long().cpu().detach().numpy())
                 target_labels.extend(labels.cpu().detach().numpy())
-                loss = F.binary_cross_entropy_with_logits(logits, labels.float(), size_average=False)
+                loss = F.binary_cross_entropy_with_logits(logits, labels.float(), reduction='sum')
             else:
                 predicted_labels.extend(torch.argmax(logits, dim=1).cpu().detach().numpy())
                 target_labels.extend(torch.argmax(labels, dim=1).cpu().detach().numpy())

@@ -14,7 +14,7 @@ class SentLevelRNN(nn.Module):
         self.sentence_gru = nn.GRU(2 * word_num_hidden, sentence_num_hidden, bidirectional=True)
         self.sentence_linear = nn.Linear(2 * sentence_num_hidden, 2 * sentence_num_hidden, bias=True)
         self.fc = nn.Linear(2 * sentence_num_hidden , target_class)
-        self.soft_sent = nn.Softmax()
+        self.soft_sent = nn.Softmax(dim=1)
 
     def forward(self,x):
         sentence_h,_ = self.sentence_gru(x)
