@@ -1,5 +1,32 @@
-import numpy as np
+import re
 import torch
+
+
+def clean_string(string):
+    """
+    Performs tokenization and string cleaning for the Reuters dataset
+    """
+    string = re.sub(r"[^A-Za-z0-9(),!?\'`]", " ", string)
+    string = re.sub(r"\s{2,}", " ", string)
+    return string.lower().strip().split()
+
+
+def split_sents(string):
+    string = re.sub(r"[!?]"," ", string)
+    return string.strip().split('.')
+
+
+def generate_ngrams(tokens, n=2):
+    n_grams = zip(*[tokens[i:] for i in range(n)])
+    tokens.extend(['-'.join(x) for x in n_grams])
+    return tokens
+
+
+def process_labels(string):
+    """
+    Returns the label string as a list of integers
+    """
+    return [float(x) for x in string]
 
 
 def pad_input_matrix(unpadded_matrix, max_doc_length):

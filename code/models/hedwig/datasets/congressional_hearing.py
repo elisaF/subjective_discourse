@@ -1,8 +1,4 @@
-import json
 import os
-import re
-import sys
-import csv
 
 import numpy as np
 import torch
@@ -10,7 +6,7 @@ from torchtext.data import NestedField, Field, TabularDataset
 from torchtext.data.iterator import BucketIterator
 from torchtext.vocab import Vectors
 
-from datasets.reuters import clean_string, split_sents, process_labels, generate_ngrams
+from utils.preprocessing import clean_string, split_sents, process_labels, generate_ngrams
 
 
 def char_quantize(string, max_length=1000):
