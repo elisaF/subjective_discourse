@@ -34,7 +34,8 @@ python -m nltk.downloader all
 Download and unpack the word vectors:
 
 ```bash
-cd subjective_discourse/data
+cd subjective_discourse/
 git clone https://git.uwaterloo.ca/jimmylin/hedwig-data.git
 cd hedwig-data/embeddings/word2vec
+tar -xvzf GoogleNews-vectors-negative300.tgz
 ```
