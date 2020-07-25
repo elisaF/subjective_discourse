@@ -10,11 +10,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 
 from common.evaluators.bow_evaluator import BagOfWordsEvaluator
 from common.trainers.bow_trainer import BagOfWordsTrainer
-from datasets.bow_processors.aapd_processor import AAPDProcessor
-from datasets.bow_processors.imdb_processor import IMDBProcessor
-from datasets.bow_processors.reuters_processor import ReutersProcessor
 from datasets.bow_processors.congressional_hearing_processor import CongressionalHearingProcessor
-from datasets.bow_processors.yelp2014_processor import Yelp2014Processor
 from models.lr.args import get_args
 from models.lr.model import LogisticRegression
 
@@ -56,11 +52,7 @@ def run_main(args):
         torch.cuda.manual_seed_all(args.seed)
 
     dataset_map = {
-        'Reuters': ReutersProcessor,
         'CongressionalHearing': CongressionalHearingProcessor,
-        'AAPD': AAPDProcessor,
-        'IMDB': IMDBProcessor,
-        'Yelp2014': Yelp2014Processor
     }
 
     if args.dataset not in dataset_map:
