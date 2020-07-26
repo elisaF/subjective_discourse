@@ -18,12 +18,10 @@ def process_json_results(json_dir, save_file, split, label_suffix):
     for json_file in json_files:
         ext_loc = json_file.index('.json')
         model_names.append('_'.join(json_file[:ext_loc].split('_')[:-1]))
-    print('model_names', model_names)
     for model_name in set(model_names):
         file_pattern = '_'.join([model_name, '*.json', split+label_suffix])
         json_files = utils.get_files_with_pattern(json_dir, file_pattern)
         json_files = [os.path.join(json_dir, json_file) for json_file in json_files]
-        print('jf', json_files)
         results_dict[model_name] = process_model_results(json_files, label_suffix)
     with open(save_file, 'w') as f:
         header_row = ['model']
