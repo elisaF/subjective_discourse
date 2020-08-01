@@ -95,7 +95,7 @@ class BertEvaluator(object):
             else:
                 if self.args.num_labels > 2:
                     predicted_labels.extend(torch.argmax(logits, dim=1).cpu().detach().numpy())
-                    target_labels.extend(label_ids.cpu().detach().numpy())
+                    target_labels.extend(torch.argmax(label_ids, dim=1).cpu().detach().numpy())
                     loss = F.cross_entropy(logits, torch.argmax(label_ids, dim=1))
                 else:
                     if self.args.is_regression:
@@ -142,6 +142,7 @@ class BertEvaluator(object):
 
         else:
             predicted_labels, target_labels = np.array(predicted_labels), np.array(target_labels)
+            hamming_loss = -1
             if self.args.is_multilabel:
                 hamming_loss = metrics.hamming_loss(target_labels, predicted_labels)
                 cm = metrics.multilabel_confusion_matrix(target_labels, predicted_labels)

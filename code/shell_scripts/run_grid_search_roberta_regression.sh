@@ -1,5 +1,5 @@
 #!/bin/sh
-for lr in 2e-5 2e-4 2e-3
+for lr in 5e-5 2e-5 2e-4 2e-3
 do
     echo ${lr}
     for warmup in 0 0.01 0.1
