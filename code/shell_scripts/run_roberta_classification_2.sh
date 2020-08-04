@@ -1,5 +1,5 @@
 #!/bin/bash
-expnames=(r_text_gold_sentiments_coarse_num r_text_gold_sentiments_num r_text_q_text r_text_q_text_last_question r_text_hit_order r_text_q_speaker_role r_text_r_speaker_role r_text_gold_q_intents_num r_text_q_speaker_party r_text_gold_q_sentiments_num r_text_q_speaker r_text_gold_q_sentiments_coarse_num r_text_question_type_num r_text_q_text_all_questions)
+expnames=(r_text_gold_sentiments_coarse_num r_text_gold_sentiments_num r_text_q_text r_text_q_text_last_question r_text_hit_order r_text_q_speaker_role r_text_r_speaker_role r_text_gold_q_intents_num r_text_q_speaker_party r_text_gold_q_sentiments_num r_text_q_speaker r_text_gold_q_sentiments_coarse_num r_text_question_type_num r_text_q_text_all_questions r_text_q_text_last_2_sents r_text_q_text_last_3_sents r_text_q_text_first_question_and_rest r_text_q_text_last_question_and_rest)
 declare -A column=(
   [r_text_gold_sentiments_num]=14
   [r_text_gold_sentiments_coarse_num]=16
@@ -15,6 +15,10 @@ declare -A column=(
   [r_text_gold_q_sentiments_coarse_num]=23
   [r_text_question_type_num]=29
   [r_text_q_text_all_questions]=30
+  [r_text_q_text_last_2_sents]=33
+  [r_text_q_text_last_3_sents]=34
+  [r_text_q_text_first_question_and_rest]=35
+  [r_text_q_text_last_question_and_rest]=36
 )
 
 for expname in "${expnames[@]}"; do

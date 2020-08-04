@@ -17,7 +17,7 @@ COLUMN_NAMES = ['qa_index_digits', 'gold_labels_binary', 'r_text', 'q_text', 'q_
                 'entropy', 'entropy_norm', 'entropy_norm_buckets', 'entropy_binarized', 'question_type_num',  # 25
                 'q_text_all_questions', 'gold_label_powerset', 'gold_label_powerset_binary',  # 30
                 'q_text_last_2_sents', 'q_text_last_3_sents',  # 33
-                'q_text_first_question_and_rest', 'q_text_last_question_and_rest']  # 'mace_entropy']  # 35
+                'q_text_first_question_and_rest', 'q_text_last_question_and_rest']  # 35
 
 
 def get_args():
