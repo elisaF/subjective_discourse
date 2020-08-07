@@ -40,7 +40,7 @@ class BertHierarchicalTrainer(object):
 
         self.initial_tr_loss_fine = float("inf")
         self.minimum_loss_percent_decrease = 0.4
-        self.patience_training = 10
+        self.patience_training = 15
         self.training_converged = True
 
     def train_epoch(self, train_dataloader):
