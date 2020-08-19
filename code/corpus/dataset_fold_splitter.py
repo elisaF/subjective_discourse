@@ -8,7 +8,7 @@ from sklearn.model_selection import GroupKFold
 
 COLUMN_NAMES = ['qa_index_digits', 'gold_labels_binary', 'r_text', 'q_text', 'q_text_last_question',
                 'gold_sentiments', 'gold_q_sentiments', 'gold_workers', 'gold_q_intents', 'hit_order',  # 5
-                'q_speaker_role', 'r_speaker_role', 'gold_q_intents_num', 'q_speaker_party', #10
+                'q_speaker_role', 'r_speaker_role', 'gold_q_intents_num', 'q_speaker_party',  # 10
                 'gold_sentiments_num', 'gold_q_sentiments_num', 'gold_sentiments_coarse_num',  # 14
                 'q_speaker',  # 17
                 'gold_sentiments_binary', 'gold_q_sentiments_count', 'gold_sentiments_coarse_count',  # 18

@@ -18,3 +18,4 @@ data/gold/gold_cv_dev_data/CongressionalHearing
 data/gold/gold_cv_dev_data
 data/gold/gold_full_data
 results_final
+data/batched/batched_hits_csv
