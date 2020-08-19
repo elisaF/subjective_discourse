@@ -12,13 +12,13 @@ If you're here just for the data, you can download
 ### Setup:
 First, create a conda environment and activate it:
 ```
-conda create --name subjective python=3.6
+conda create --name subjective python=3.8
 conda activate subjective
 ```
 
 Install pytorch and cuda:
 ```
-conda install pytorch==1.2.0 torchvision==0.4.0 cudatoolkit=10.0 -c pytorch
+conda install pytorch torchvision cudatoolkit=10.1 -c pytorch
 ```
 
 Clone this repo and install the requirements:
