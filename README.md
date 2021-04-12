@@ -6,7 +6,7 @@ Ferracane, Elisa TBD
 `
 
 ## Dataset
-If you're here just for the data, you can download 
+If you're here just for the data, you can download it here: [gold_cv_dev_data.tar.gz](data/gold/gold_cv_dev_data.tar.gz). Unpack with `tar -zxvf gold_cv_dev_data.tar.gz`.
 
 ## Code
 ### Setup:
