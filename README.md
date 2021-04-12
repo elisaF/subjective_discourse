@@ -1,5 +1,5 @@
 # Subjective Acts and Intents
-This repo contains the code and data for analyzing subjective judgments of witness responses in U.S. congressional hearings (link paper here). If you make use of the data or code, please cite:
+This repo contains the code and data for analyzing subjective judgments of witness responses in U.S. congressional hearings ([paper](https://arxiv.org/abs/2104.04470) to appear in NAACL 2021). If you make use of the data or code, please cite:
 
 `
 Ferracane, Elisa TBD
